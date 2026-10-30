@@ -1128,7 +1128,7 @@ h1,h2,h3{margin:0;text-wrap:balance}
 .top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;height:48px;background:var(--card);border-bottom:1px solid var(--border);display:flex;align-items:center;gap:10px;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
 .crumb{flex:1;min-width:0;display:flex;gap:6px;white-space:nowrap;overflow:hidden}
 .crumb span{color:var(--mfg)} .crumb b{font-weight:600;overflow:hidden;text-overflow:ellipsis}
-.today{font-size:11px;color:var(--mfg);text-transform:capitalize}
+.tdate{font-size:11px;color:var(--mfg);text-transform:capitalize}
 .me{display:flex;align-items:center;gap:6px;border:1px solid var(--border);border-radius:6px;padding:3px 8px 3px 4px;font-size:12px;font-weight:500}
 .me .av{width:20px;height:20px;border-radius:50%;background:#004c99;color:#fff;display:grid;place-items:center;font-size:9px;font-weight:700}
 .menu-btn{display:none;background:none;border:0;padding:6px;border-radius:6px;color:var(--mfg)}
@@ -1138,7 +1138,7 @@ h1,h2,h3{margin:0;text-wrap:balance}
   .side{transform:translateX(-100%);transition:transform .2s;width:256px;box-shadow:0 0 40px rgba(0,0,0,.35)}
   .side.open{transform:none}
   .scrim.open{display:block;position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:25}
-  .wrap{margin-left:0}.menu-btn{display:block}.today,.crumb span{display:none}
+  .wrap{margin-left:0}.menu-btn{display:block}.tdate,.crumb span{display:none}
   .top{padding-left:max(10px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
   .content{padding-bottom:calc(84px + env(safe-area-inset-bottom,0px));padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
   .tabs{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:20;background:var(--card);border-top:1px solid var(--border);padding-bottom:env(safe-area-inset-bottom,0px);padding-left:env(safe-area-inset-left,0px);padding-right:env(safe-area-inset-right,0px)}
@@ -1329,7 +1329,7 @@ tbody tr:hover td{background:var(--bg)}
 #tourBtn{background:var(--primary);color:#fff;border-color:rgba(255,255,255,.3)}
 .side-foot{display:flex;flex-direction:column;gap:6px}
 .resetb{border:0;background:none;padding:0;text-align:left;color:var(--primary);font-size:11.5px;font-weight:600}
-.tour{position:fixed;right:24px;bottom:24px;z-index:50;width:min(360px,calc(100vw - 24px));padding:16px;border-radius:24px;background:var(--card-hi);border:1px solid var(--rim);box-shadow:var(--spec),0 18px 50px rgba(20,40,90,.28);-webkit-backdrop-filter:blur(30px) saturate(190%);backdrop-filter:blur(30px) saturate(190%);display:flex;flex-direction:column;gap:8px}
+.tour{position:fixed;right:24px;bottom:24px;z-index:80;width:min(360px,calc(100vw - 24px));padding:16px;border-radius:24px;background:var(--card-hi);border:1px solid var(--rim);box-shadow:var(--spec),0 18px 50px rgba(20,40,90,.28);-webkit-backdrop-filter:blur(30px) saturate(190%);backdrop-filter:blur(30px) saturate(190%);display:flex;flex-direction:column;gap:8px}
 .tour b{font-size:16px} .tour p{margin:0;color:var(--mfg);line-height:1.5}
 .tour-h{display:flex;align-items:center;gap:8px}
 .tour-dots{display:flex;gap:5px;justify-content:center;padding-top:4px}.tour-dots i{width:6px;height:6px;border-radius:99px;background:var(--border2)}.tour-dots i.on{width:18px;background:var(--primary)}
@@ -1338,6 +1338,56 @@ tbody tr:hover td{background:var(--bg)}
 @media (max-width:1023px){.tour{right:12px;left:12px;width:auto;bottom:calc(92px + env(safe-area-inset-bottom,0px))}}
 @media (max-width:700px){#tourBtn span,.ready .rl{display:none}#tourBtn{width:34px;padding:0;justify-content:center}}
 @media (max-width:380px){.me{display:none}}
+/* Telas da apresentação */
+.stats small.q{font-weight:600;color:var(--fg);font-size:12px;margin-bottom:6px}
+.lnk{border:0;background:none;padding:0;color:var(--primary);font-weight:600;font-size:12.5px;text-align:left;cursor:pointer}
+.lnk b{color:var(--fg)}
+td .lnk{font-weight:500;color:var(--fg)}
+.eqc{display:flex;gap:12px;align-items:flex-start;text-align:left;padding:12px;cursor:pointer}
+.eqc:hover{border-color:var(--primary)}
+.eqph{width:56px;height:56px;border-radius:14px;background:var(--primary-soft);color:var(--primary);display:grid;place-items:center;overflow:hidden;flex:none}
+.eqph.big{width:min(220px,100%);height:180px;border-radius:18px}
+.eqph svg{width:26px;height:26px}.eqph.big svg{width:56px;height:56px}
+.ph-img{width:100%;height:100%;object-fit:cover}
+.modal-bg{position:fixed;inset:0;background:rgba(5,10,20,.45);z-index:70;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+.modal{position:fixed;z-index:71;left:50%;top:50%;transform:translate(-50%,-50%);width:min(760px,calc(100vw - 24px));max-height:calc(100vh - 48px);overflow:auto;padding:18px;background:var(--card-hi)!important}
+.mh{display:flex;align-items:center;gap:8px;margin-bottom:12px}
+.mgrid{display:grid;grid-template-columns:220px minmax(0,1fr);gap:18px}
+@media (max-width:620px){.mgrid{grid-template-columns:minmax(0,1fr)}}
+.mphoto{display:flex;flex-direction:column;gap:8px;align-items:flex-start}
+.dl{display:grid;grid-template-columns:120px minmax(0,1fr);gap:6px 12px;margin:12px 0 0;font-size:13px}
+.dl dt{color:var(--mfg)}.dl dd{margin:0;overflow-wrap:anywhere}
+.ladder{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px}
+@media (max-width:560px){.ladder{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.rung{border:1px solid var(--rim);border-radius:16px;padding:10px;display:flex;flex-direction:column;gap:2px;background:var(--muted)}
+.rung b{font-size:24px;line-height:1}.rung span{font-size:11.5px;color:var(--mfg)}
+.ck .acao{flex-basis:100%}
+.photos{display:flex;gap:8px;flex-wrap:wrap}
+.pth{position:relative;width:84px;height:84px;border-radius:14px;overflow:hidden;border:1px solid var(--rim)}
+.pth img{width:100%;height:100%;object-fit:cover}
+.pth button{position:absolute;top:4px;right:4px;width:22px;height:22px;border-radius:99px;border:0;background:rgba(0,0,0,.55);color:#fff;display:grid;place-items:center;padding:0}
+.pth button svg{width:12px;height:12px}
+.padd{width:84px;height:84px;border-radius:14px;border:1.5px dashed var(--border2);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;font-size:10.5px;text-align:center;color:var(--mfg);cursor:pointer;padding:4px}
+.padd svg{width:22px;height:22px;color:var(--primary)}
+.sig{width:100%;height:150px;border-radius:16px;border:1.5px dashed var(--border2);background:var(--card-hi);touch-action:none;cursor:crosshair;display:block}
+.sigimg{display:block;max-width:260px;width:100%;margin-top:4px;border-radius:10px;border:1px solid var(--border);background:var(--card-hi)}
+.prog{display:flex;flex-direction:column;gap:8px;text-align:left;cursor:pointer}
+.prog.on{border-color:var(--primary);box-shadow:0 0 0 1px var(--primary),var(--shadow)}
+.cal{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:4px}
+.cal .h{font-size:10.5px;font-weight:600;text-transform:uppercase;color:var(--mfg);text-align:center;padding:4px 0}
+.cal .d{min-height:84px;border:1px solid var(--border);border-radius:12px;background:var(--card-hi);padding:5px;display:flex;flex-direction:column;gap:3px;min-width:0;text-align:left;cursor:pointer;font:inherit;color:inherit}
+.cal .d.today{border-color:var(--primary);box-shadow:inset 0 0 0 1px var(--primary)}
+.cal .d.out{background:transparent;border-style:dashed;cursor:default}
+.cal .d>b{font-size:12px;font-weight:600}
+.ev{font-size:10.5px;padding:1px 6px;border-radius:6px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+@media (max-width:640px){.cal .d{min-height:52px}.ev{font-size:0;height:5px;padding:0}}
+.wk{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:8px}
+@media (max-width:900px){.wk{grid-template-columns:minmax(0,1fr)}}
+.wd{border:1px solid var(--border);border-radius:14px;padding:8px;display:flex;flex-direction:column;gap:6px;min-width:0;background:var(--card-hi)}
+.wd.today{border-color:var(--primary)}
+.wd>b{font-size:12px;text-transform:capitalize}
+.evr{display:flex;flex-direction:column;gap:3px;font-size:12.5px}
+.evr .pill{align-self:flex-start}
 /* ===== Liquid Glass ===== */
 body{background:radial-gradient(55% 45% at 8% 0%,var(--w1),transparent 70%),radial-gradient(45% 40% at 100% 8%,var(--w2),transparent 70%),radial-gradient(55% 45% at 75% 100%,var(--w3),transparent 70%),var(--bg);background-attachment:fixed;letter-spacing:-.005em}
 body::before{background:transparent}
@@ -1426,7 +1476,7 @@ tbody tr:hover td{background:var(--muted)}
   <header class="top">
     <button class="menu-btn" id="menuBtn" aria-label="Abrir menu"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
     <div class="crumb"><span>Linha de Montagem</span><span>/</span><b id="pageTitle">Dashboard</b></div>
-    <span class="today" id="today"></span>
+    <span class="tdate" id="today"></span>
     <a class="ready" href="#centro-risco" id="ready" aria-label="Prontidão para auditoria"></a>
     <button class="tbtn" id="tourBtn" aria-label="Modo apresentação"></button>
     <button class="tbtn ic" id="themeBtn" aria-label="Alternar tema claro ou escuro"></button>
@@ -1484,49 +1534,72 @@ let uid=500;
 
 /* ===== dados de exemplo (prazos em dias a partir de hoje) ===== */
 const FAB='Taubaté';
+const MAKER={torquimetro:[['Norbar','TTi 60'],['Gedore','Dremometer A'],['Tohnichi','QL50N4']],aparafusadeira:[['Atlas Copco','Tensor STB'],['Bosch Rexroth','Nexo 4'],['Atlas Copco','QST 42']],maquina:[['Herrmann Ultraschall','HiQ Dialog'],['Böllhoff','RIVKOM Smart']],dispositivo:[['Ferramentaria VW','Projeto interno']],bancada:[['Ferramentaria VW','Projeto interno']],medicao:[['Mitutoyo','CD-15APX'],['Mitutoyo','Digimatic 200']]};
+const TPL={
+ 'Processo':['Instrução de trabalho disponível no posto','Sequência de montagem seguida','Torque registrado no sistema','Peça sem defeito visual','Rastreabilidade da peça garantida'],
+ 'Ferramentas':['Ferramenta identificada com código','Calibração dentro da validade','Sem danos ou desgaste','Guardada no local identificado','Certificado disponível'],
+ 'Equipamentos':['Equipamento identificado e cadastrado','Manutenção preventiva em dia','Dispositivos de segurança funcionando','Sem vazamentos ou ruídos anormais','Limpeza e conservação'],
+ 'Gestão Visual':['Demarcações de piso íntegras','Etiquetas de bancadas legíveis','Plaquetas de torque visíveis','Quadro do time atualizado','Sinalização de EPI visível'],
+ 'Segurança':['EPIs em uso por todos','Rotas de fuga desobstruídas','Extintor sinalizado e lacrado','Dispositivos de parada testados'],
+ '5S':['Utilização: só o necessário no posto','Organização: cada item no seu lugar','Limpeza: posto e piso limpos','Padronização: padrões visíveis e seguidos','Disciplina: rotina 5S cumprida'],
+ 'Personalizada':[]};
 const S={
  eq:[
-  // código, nome, tipo, área, célula, equipe, tacto, validade (dias), certificado
-  ['TQ-012','Torquímetro de estalo 5–60 N·m','torquimetro','Parachoque','Célula A','Equipe 1','Tacto 01',64,1],
-  ['AP-031','Aparafusadeira elétrica 25 N·m','aparafusadeira','Parachoque','Célula A','Equipe 1','Tacto 01',48,1],
-  ['GB-207','Gabarito de posição do para-choque','dispositivo','Parachoque','Célula A','Equipe 1','Tacto 02',190,1],
-  ['BC-002','Bancada de pré-montagem','bancada','Parachoque','Célula A','Equipe 1','Tacto 02',null,0],
-  ['AP-044','Aparafusadeira pneumática 55 N·m','aparafusadeira','Parachoque','Célula A','Equipe 2','Tacto 03',48,1],
-  ['TQ-015','Torquímetro digital 2–25 N·m','torquimetro','Parachoque','Célula A','Equipe 2','Tacto 03',52,1],
-  ['DS-088','Dispositivo de fixação do farol de neblina','dispositivo','Parachoque','Célula A','Equipe 2','Tacto 04',140,1],
-  ['AP-019','Aparafusadeira elétrica 18 N·m','aparafusadeira','Parachoque','Célula B','Equipe 1','Tacto 05',95,1],
-  ['PQ-512','Paquímetro digital 150 mm','medicao','Parachoque','Célula B','Equipe 1','Tacto 05',71,1],
-  ['MQ-210','Máquina de solda por ultrassom','maquina','Parachoque','Célula B','Equipe 2','Tacto 06',-11,1],
-  ['TQ-021','Torquímetro de estalo 10–100 N·m','torquimetro','Parachoque','Célula B','Equipe 2','Tacto 06',160,1],
-  ['AP-102','Aparafusadeira elétrica 9 N·m','aparafusadeira','Portas','Célula C','Equipe 3','Tacto 07',33,1],
-  ['TQ-030','Torquímetro digital 5–50 N·m','torquimetro','Portas','Célula C','Equipe 3','Tacto 07',210,1],
-  ['DS-120','Dispositivo de ajuste da folga da porta','dispositivo','Portas','Célula C','Equipe 3','Tacto 08',80,1],
-  ['AP-110','Aparafusadeira pneumática 30 N·m','aparafusadeira','Portas','Célula C','Equipe 4','Tacto 09',125,1],
-  ['MQ-301','Rebitadeira automática','maquina','Portas','Célula C','Equipe 4','Tacto 09',41,1],
-  ['TQ-044','Torquímetro de estalo 2–20 N·m','torquimetro','Painéis','Célula D','Equipe 5','Tacto 10',300,1],
-  ['AP-150','Aparafusadeira elétrica 12 N·m','aparafusadeira','Painéis','Célula D','Equipe 5','Tacto 10',58,1]
- ].map(([code,name,type,area,cell,team,tact,venc,cert],i)=>({id:i+1,code,name,type,factory:FAB,area,cell,team,tact,venc,cert:!!cert,st:null,resp:['Marcos','Filipi','Ana','Rafael','Juliana'][i%5]})),
+  // código, nome, tipo, área, célula, equipe, tacto, validade da calibração (dias; null = não calibrável), observação (deixa o item em atenção)
+  ['TQ-012','Torquímetro de estalo 5–60 N·m','torquimetro','Parachoque','Célula A','Equipe 1','Tacto 01',64],
+  ['AP-031','Aparafusadeira elétrica 25 N·m','aparafusadeira','Parachoque','Célula A','Equipe 1','Tacto 01',48],
+  ['GB-207','Gabarito de posição do para-choque','dispositivo','Parachoque','Célula A','Equipe 1','Tacto 02',190],
+  ['BC-002','Bancada de pré-montagem','bancada','Parachoque','Célula A','Equipe 1','Tacto 02',null,'Etiqueta de identificação ilegível'],
+  ['TQ-016','Torquímetro de estalo 2–25 N·m','torquimetro','Parachoque','Célula A','Equipe 1','Tacto 02',120],
+  ['AP-044','Aparafusadeira pneumática 55 N·m','aparafusadeira','Parachoque','Célula A','Equipe 2','Tacto 03',48],
+  ['TQ-015','Torquímetro digital 2–25 N·m','torquimetro','Parachoque','Célula A','Equipe 2','Tacto 03',52],
+  ['DS-089','Dispositivo de montagem da grade','dispositivo','Parachoque','Célula A','Equipe 2','Tacto 03',230],
+  ['DS-088','Dispositivo de fixação do farol de neblina','dispositivo','Parachoque','Célula A','Equipe 2','Tacto 04',140,'Pino-guia com desgaste — troca solicitada'],
+  ['AP-045','Aparafusadeira elétrica 6 N·m','aparafusadeira','Parachoque','Célula A','Equipe 2','Tacto 04',175],
+  ['AP-019','Aparafusadeira elétrica 18 N·m','aparafusadeira','Parachoque','Célula B','Equipe 1','Tacto 05',95],
+  ['PQ-512','Paquímetro digital 150 mm','medicao','Parachoque','Célula B','Equipe 1','Tacto 05',-6],
+  ['BC-005','Bancada de inspeção final','bancada','Parachoque','Célula B','Equipe 1','Tacto 05',null],
+  ['MQ-210','Máquina de solda por ultrassom','maquina','Parachoque','Célula B','Equipe 2','Tacto 06',-11],
+  ['TQ-021','Torquímetro de estalo 10–100 N·m','torquimetro','Parachoque','Célula B','Equipe 2','Tacto 06',160],
+  ['AP-020','Aparafusadeira elétrica 25 N·m','aparafusadeira','Parachoque','Célula B','Equipe 2','Tacto 06',135],
+  ['AP-102','Aparafusadeira elétrica 9 N·m','aparafusadeira','Portas','Célula C','Equipe 3','Tacto 07',33,'Ruído no motor — aguardando reparo'],
+  ['TQ-030','Torquímetro digital 5–50 N·m','torquimetro','Portas','Célula C','Equipe 3','Tacto 07',210],
+  ['MD-020','Medidor digital de folga e nivelamento','medicao','Portas','Célula C','Equipe 3','Tacto 07',110],
+  ['DS-120','Dispositivo de ajuste da folga da porta','dispositivo','Portas','Célula C','Equipe 3','Tacto 08',80,'Folga acima do padrão — ajuste agendado'],
+  ['DS-130','Dispositivo de alinhamento da porta','dispositivo','Portas','Célula C','Equipe 3','Tacto 08',260],
+  ['PQ-520','Paquímetro digital 200 mm','medicao','Portas','Célula C','Equipe 3','Tacto 08',185],
+  ['AP-110','Aparafusadeira pneumática 30 N·m','aparafusadeira','Portas','Célula C','Equipe 4','Tacto 09',125],
+  ['MQ-301','Rebitadeira automática','maquina','Portas','Célula C','Equipe 4','Tacto 09',41],
+  ['TQ-031','Torquímetro de estalo 5–60 N·m','torquimetro','Portas','Célula C','Equipe 4','Tacto 09',150],
+  ['TQ-044','Torquímetro de estalo 2–20 N·m','torquimetro','Painéis','Célula D','Equipe 5','Tacto 10',300],
+  ['AP-150','Aparafusadeira elétrica 12 N·m','aparafusadeira','Painéis','Célula D','Equipe 5','Tacto 10',58],
+  ['BC-010','Bancada de pré-montagem do painel','bancada','Painéis','Célula D','Equipe 5','Tacto 10',null],
+  ['DS-140','Dispositivo de fixação do painel','dispositivo','Painéis','Célula D','Equipe 5','Tacto 10',205]
+ ].map(([code,name,type,area,cell,team,tact,venc,nota],i)=>{const mk=MAKER[type][i%MAKER[type].length];
+  return {id:i+1,code,name,type,factory:FAB,area,cell,team,tact,venc,cert:venc!=null,st:nota?'atencao':null,nota:nota||'',resp:['Marcos','Filipi','Ana','Rafael','Juliana'][i%5],
+   maker:mk[0],model:mk[1],serial:code.replace('-','')+'-'+(10000+(i*7919)%89999),cal:venc!=null?venc-365:null,photo:null,
+   hist:venc!=null?[{d:venc-730,cert:'CAL-'+(2400+i*37)},{d:venc-365,cert:'CAL-'+(2500+i*41)}]:[]}}),
  audits:[
-  {id:1,title:'Auditoria de Torque · Célula A',type:'Torque',cell:'Célula A',auditor:'Filipi',date:-1,status:'concluida',result:'conforme',score:96},
-  {id:2,title:'Auditoria 5S · Tacto 06',type:'Processo',cell:'Célula B',auditor:'Ana',date:-2,status:'concluida',result:'conforme',score:91},
-  {id:3,title:'LPA Tacto 03',type:'Processo',cell:'Célula A',auditor:'Marcos',date:-4,status:'concluida',result:'conforme',score:94},
+  {id:1,title:'Auditoria de Ferramentas · Célula A',type:'Ferramentas',cell:'Célula A',auditor:'Filipi',date:-1,status:'concluida',result:'conforme',score:96},
+  {id:2,title:'Auditoria 5S · Tacto 06',type:'5S',cell:'Célula B',auditor:'Ana',date:-2,status:'concluida',result:'conforme',score:91},
+  {id:3,title:'Auditoria de Processo · Tacto 03',type:'Processo',cell:'Célula A',auditor:'Marcos',date:-4,status:'concluida',result:'conforme',score:94},
   {id:4,title:'Gestão Visual · Célula C',type:'Gestão Visual',cell:'Célula C',auditor:'Rafael',date:-6,status:'concluida',result:'nao_conforme',score:71},
   {id:5,title:'Auditoria de Equipamentos · Célula B',type:'Equipamentos',cell:'Célula B',auditor:'Filipi',date:-3,status:'concluida',result:'conforme',score:88},
-  {id:9,title:'Auditoria de Torque · Célula C',type:'Torque',cell:'Célula C',auditor:'Rafael',date:-8,status:'concluida',result:'conforme',score:95},
-  {id:10,title:'Auditoria de Bancadas · Célula A',type:'Bancadas',cell:'Célula A',auditor:'Filipi',date:-11,status:'concluida',result:'conforme',score:92},
+  {id:9,title:'Auditoria de Ferramentas · Célula C',type:'Ferramentas',cell:'Célula C',auditor:'Rafael',date:-8,status:'concluida',result:'conforme',score:95},
+  {id:10,title:'Auditoria 5S · Célula A',type:'5S',cell:'Célula A',auditor:'Filipi',date:-11,status:'concluida',result:'conforme',score:92},
   {id:11,title:'Auditoria de Segurança · Célula B',type:'Segurança',cell:'Célula B',auditor:'Juliana',date:-15,status:'concluida',result:'conforme',score:97},
-  {id:12,title:'LPA Tacto 09',type:'Processo',cell:'Célula C',auditor:'Marcos',date:-19,status:'concluida',result:'conforme',score:93},
-  {id:13,title:'Auditoria de Ferramentas · Célula D',type:'Ferramentas',cell:'Célula D',auditor:'Ana',date:-24,status:'concluida',result:'conforme',score:90},
+  {id:12,title:'Auditoria de Processo · Tacto 09',type:'Processo',cell:'Célula C',auditor:'Marcos',date:-19,status:'concluida',result:'conforme',score:93},
+  {id:13,title:'Auditoria de Equipamentos · Célula D',type:'Equipamentos',cell:'Célula D',auditor:'Ana',date:-24,status:'concluida',result:'conforme',score:90},
   {id:6,title:'Auditoria de Segurança · Parachoque',type:'Segurança',cell:'Célula A',auditor:'Juliana',date:2,status:'pendente',result:null},
   {id:7,title:'Auditoria de Ferramentas · Portas',type:'Ferramentas',cell:'Célula C',auditor:'Rafael',date:5,status:'pendente',result:null},
   {id:8,title:'Auditoria VDA 6.3 · Área Parachoque',type:'Processo',cell:'Célula A',auditor:'Qualidade VW',date:9,status:'pendente',result:null}
  ],
  ncs:[
-  {id:1,desc:'Máquina de solda MQ-210 em uso com calibração vencida',prio:'critica',team:'Equipe 2',resp:'Marcos',prazo:1,status:'aberta'},
-  {id:2,desc:'Etiqueta de identificação ilegível na bancada BC-002',prio:'media',team:'Equipe 1',resp:'Filipi',prazo:3,status:'em_andamento'},
-  {id:3,desc:'Faixa de piso apagada na rota de pedestres da Célula C',prio:'alta',team:'Equipe 3',resp:'Ana',prazo:6,status:'em_andamento'},
-  {id:4,desc:'Peça sem identificação de PN no carrinho do Tacto 05',prio:'baixa',team:'Equipe 1',resp:'Ana',prazo:-3,status:'concluida'},
-  {id:5,desc:'Torque fora da janela no parafuso do suporte (AP-044)',prio:'alta',team:'Equipe 2',resp:'Rafael',prazo:2,status:'em_andamento'}
+  {id:1,desc:'Máquina de solda MQ-210 em uso com calibração vencida',prio:'critica',team:'Equipe 2',resp:'Marcos',prazo:1,status:'aberta',acao:'Bloquear a máquina e enviar ao laboratório de calibração'},
+  {id:2,desc:'Etiqueta de identificação ilegível na bancada BC-002',prio:'media',team:'Equipe 1',resp:'Filipi',prazo:3,status:'em_andamento',acao:'Imprimir e trocar a etiqueta'},
+  {id:3,desc:'Faixa de piso apagada na rota de pedestres da Célula C',prio:'alta',team:'Equipe 3',resp:'Ana',prazo:6,status:'em_andamento',acao:'Solicitar repintura à manutenção predial'},
+  {id:4,desc:'Peça sem identificação de PN no carrinho do Tacto 05',prio:'baixa',team:'Equipe 1',resp:'Ana',prazo:-3,status:'concluida',acao:'Etiqueta de PN aplicada'},
+  {id:5,desc:'Torque fora da janela no parafuso do suporte (AP-044)',prio:'alta',team:'Equipe 2',resp:'Rafael',prazo:2,status:'em_andamento',acao:'Reprogramar o controlador e auditar 5 peças'}
  ],
  tasks:[
   {id:1,name:'Verificar torquímetros do Tacto 01',cat:'diaria',shift:'1',status:'concluida',area:'Parachoque'},
@@ -1534,33 +1607,40 @@ const S={
   {id:3,name:'Conferir etiquetas das bancadas',cat:'diaria',shift:'1',status:'em_andamento',area:'Parachoque'},
   {id:4,name:'Registrar refugo do turno',cat:'diaria',shift:'1',status:'pendente',area:'Parachoque'},
   {id:5,name:'Auditoria 5S no Tacto 06',cat:'semanal',shift:'1',status:'pendente',area:'Parachoque'},
-  {id:6,name:'Enviar TQ-012 para o laboratório de calibração',cat:'semanal',shift:'1',status:'em_andamento',area:'Ferramentaria'},
+  {id:6,name:'Enviar PQ-512 para o laboratório de calibração',cat:'semanal',shift:'1',status:'em_andamento',area:'Ferramentaria'},
   {id:7,name:'Atualizar matriz de versatilidade',cat:'mensal',shift:'1',status:'pendente',area:'Parachoque'},
+  {id:11,name:'Revisar plaquetas de torque da Célula A',cat:'mensal',shift:'1',status:'concluida',area:'Parachoque'},
   {id:8,name:'Verificar torquímetros do Tacto 07',cat:'diaria',shift:'2',status:'concluida',area:'Portas'},
   {id:9,name:'Limpeza do dispositivo DS-120',cat:'semanal',shift:'2',status:'concluida',area:'Portas'},
   {id:10,name:'Inspeção da rebitadeira MQ-301',cat:'diaria',shift:'3',status:'concluida',area:'Portas'}
  ],
  visual:[
-  {id:1,name:'Etiqueta BC-002',type:'Etiqueta',cell:'Célula A',tact:'Tacto 02',cond:'regular',last:-210},
-  {id:2,name:'Faixa de pedestres Célula C',type:'Demarcação',cell:'Célula C',tact:'—',cond:'regular',last:-150},
-  {id:3,name:'Plaqueta de torque F125',type:'Plaqueta',cell:'Célula A',tact:'Tacto 01',cond:'boa',last:-40},
-  {id:4,name:'Sinalização de EPI obrigatório',type:'Sinalização',cell:'Célula B',tact:'Tacto 05',cond:'regular',last:-120},
-  {id:5,name:'Quadro de gestão do time',type:'Sinalização',cell:'Célula A',tact:'—',cond:'boa',last:-12},
-  {id:6,name:'Etiqueta de PN dos carrinhos',type:'Etiqueta',cell:'Célula B',tact:'Tacto 06',cond:'boa',last:-25}
+  {id:1,name:'Etiqueta da bancada BC-002',type:'Etiqueta',cell:'Célula A',tact:'Tacto 02',cond:'regular',last:-210,hist:[{d:-600,what:'Instalação'},{d:-210,what:'Troca por desgaste'}]},
+  {id:2,name:'Faixa de pedestres Célula C',type:'Demarcação',cell:'Célula C',tact:'—',cond:'regular',last:-150,hist:[{d:-500,what:'Pintura inicial'},{d:-150,what:'Repintura'}]},
+  {id:3,name:'Plaqueta de torque F125',type:'Plaqueta',cell:'Célula A',tact:'Tacto 01',cond:'boa',last:-40,hist:[{d:-400,what:'Instalação'},{d:-40,what:'Atualização do valor de torque'}]},
+  {id:4,name:'Sinalização de EPI obrigatório',type:'Sinalização',cell:'Célula B',tact:'Tacto 05',cond:'regular',last:-120,hist:[{d:-480,what:'Instalação'},{d:-120,what:'Troca'}]},
+  {id:5,name:'Quadro de gestão do time',type:'Sinalização',cell:'Célula A',tact:'—',cond:'boa',last:-12,hist:[{d:-300,what:'Instalação'},{d:-12,what:'Atualização mensal'}]},
+  {id:6,name:'Etiqueta de PN dos carrinhos',type:'Etiqueta',cell:'Célula B',tact:'Tacto 06',cond:'boa',last:-25,hist:[{d:-25,what:'Instalação'}]},
+  {id:7,name:'Plaqueta de identificação MQ-210',type:'Plaqueta',cell:'Célula B',tact:'Tacto 06',cond:'boa',last:-60,hist:[{d:-700,what:'Instalação'},{d:-60,what:'Troca'}]}
  ],
- templates:[
-  {name:'Checklist de Torquímetros',type:'Torque',equip:'Torquímetro',items:['Etiqueta de calibração visível','Certificado dentro da validade','Faixa de torque compatível com a operação','Teste de estalo no banco de aferição','Armazenado no suporte identificado']},
-  {name:'Checklist de Aparafusadeiras',type:'Torque',equip:'Aparafusadeira',items:['Programa de torque correto no controlador','Calibração em dia','Cabo e conectores sem danos','Bit/soquete sem desgaste','Registro de aperto no sistema']},
-  {name:'Gestão Visual da Célula',type:'Gestão Visual',equip:'—',items:['Demarcações de piso íntegras','Etiquetas de bancadas legíveis','Quadro do time atualizado','Sinalização de EPI visível']},
-  {name:'Segurança do Posto',type:'Segurança',equip:'—',items:['EPIs em uso por todos','Rotas de fuga desobstruídas','Extintor sinalizado e lacrado','Dispositivos de parada testados']}
+ rev:[
+  {title:'Manutenção preventiva · AP-110',date:-2},{title:'Revisão preventiva · MQ-301',date:3},{title:'Revisão do layout de bancadas · Tacto 05',date:6},
+  {title:'Revisão da gestão visual · Célula C',date:12},{title:'Revisão dos torquímetros · Célula A',date:16},{title:'Revisão das instruções de trabalho · Portas',date:22}
  ]
 };
 const TREND=[['mai',84],['jun',87],['jul',86],['ago',89],['set',88],['out',null]];
-const ACT=[['audit','Auditoria de Torque concluída · Célula A · 96%','1d'],['nc','Nova NC · torque fora da janela na AP-044','1d'],['audit','Auditoria 5S do Tacto 06 aprovada · 91%','2d'],['calib','MQ-210 venceu a calibração','11d'],['plan','NC de PN no carrinho do Tacto 05 concluída','5d']];
+const ACT=[['audit','Auditoria de Torque concluída · Célula A · 96%','1d'],['nc','Nova NC · torque fora da janela na AP-044','1d'],['audit','Auditoria 5S do Tacto 06 aprovada · 91%','2d'],['calib','MQ-210 venceu a calibração','11d'],['calib','PQ-512 venceu a calibração','6d'],['plan','NC de PN no carrinho do Tacto 05 concluída','5d']];
 
 /* ===== regras ===== */
 const eqSt=e=>e.st||(e.venc==null?'conforme':e.venc<0?'vencido':e.venc<=30?'atencao':'conforme');
 const ST={conforme:['Conforme','ok'],atencao:['Atenção','warn'],vencido:['Vencido','bad']};
+const EQ=c=>S.eq.find(e=>e.code===c);
+// régua de alertas da calibração: 60, 30, 15 e 7 dias antes, e no vencimento
+const stage=v=>v==null?null:v<0?'venc':v<=7?'7':v<=15?'15':v<=30?'30':v<=60?'60':null;
+const STG={'60':['Alerta 60 dias','info'],'30':['Alerta 30 dias','warn'],'15':['Alerta 15 dias','warn'],'7':['Alerta 7 dias','bad'],venc:['Vencido','bad']};
+const nextAlert=v=>{for(const t of [60,30,15,7,0])if(v>t)return [t,v-t];return null};
+function recal(e){e.hist.push({d:0,cert:'CAL-'+(3000+(++uid))});e.cal=0;e.venc=365;e.cert=true;e.st=e.nota?'atencao':null}
+const TIC={torquimetro:'gauge',aparafusadeira:'wrench',dispositivo:'box',bancada:'grid',maquina:'factory',medicao:'gauge'};
 const TYPE={torquimetro:'Torquímetro',aparafusadeira:'Aparafusadeira',dispositivo:'Dispositivo',bancada:'Bancada',maquina:'Máquina',medicao:'Medição'};
 // Porte do usePreAudit.js do app: mesmos pesos (crítico 15, alta 8, média 3) e teto de 75 com achado crítico (VDA 6.1)
 function preAudit(){
@@ -1591,14 +1671,14 @@ function kpi(){const A=S.audits,done=A.filter(a=>a.status==='concluida'),ap=done
  return {total:A.length,done:done.length,approved:ap.length,conf:done.length?Math.round(ap.length/done.length*100):0,
   openNC:S.ncs.filter(n=>n.status!=='concluida').length,critNC:S.ncs.filter(n=>n.prio==='critica'&&n.status!=='concluida').length,
   tasksPend:S.tasks.filter(t=>t.status!=='concluida').length,expired:S.eq.filter(e=>e.venc!=null&&e.venc<0).length,
-  soon:S.eq.filter(e=>e.venc!=null&&e.venc>=0&&e.venc<=30).length,planned:A.filter(a=>a.status==='pendente'&&a.date>=0).length,
+  soon:S.eq.filter(e=>e.venc!=null&&e.venc>=0&&e.venc<=60).length,planned:A.filter(a=>a.status==='pendente'&&a.date>=0).length,
   late:A.filter(a=>a.status==='pendente'&&a.date<0).length}}
 const nextAudit=()=>S.audits.filter(a=>a.status==='pendente'&&a.date>=0).sort((a,b)=>a.date-b.date)[0];
 const tone=s=>s>=90?'ok':s>=80?'warn':'bad';
 // auto-checagem do motor de pré-auditoria
 {const s0=preAudit();console.assert(s0.c>0&&s0.score<=75&&s0.rating==='C','pré-auditoria: crítico deve travar em 75 e dar C')}
 /* ===== memória local: o que for mexido continua lá ao recarregar (só neste navegador) ===== */
-const KEY='chefinho-glsi-demo-v1';
+const KEY='chefinho-glsi-demo-v2';
 try{const sv=JSON.parse(localStorage.getItem(KEY)||'null');if(sv&&Array.isArray(sv.eq)&&sv.eq.length===S.eq.length)Object.assign(S,sv)}catch(e){}
 try{const th=localStorage.getItem(KEY+'-tema');if(th)document.documentElement.dataset.theme=th}catch(e){}
 let resetting=false;
@@ -1625,7 +1705,9 @@ function trendChart(cur){const d=TREND.map(([m,v])=>[m,v??cur]);const W=600,Hh=1
 /* ===== navegação ===== */
 const NAV=[
  ['Visão Geral',[['inicio','Dashboard','dash'],['centro-risco','Centro de Risco','risk'],['mapa','Mapa Digital 3D','map'],['painel-fabrica','Painel Fábrica','tv']]],
- ['Operação',[['auditoria-rapida','Auditoria Rápida','pen'],['nao-conformidades','Não Conformidades','alert'],['calibracao','Calibração','gauge'],['quadro-monitor','Monitor','list']]],
+ ['Auditorias',[['auditoria-rapida','Auditoria Rápida','pen'],['auditorias','Auditorias','clip'],['nao-conformidades','Não Conformidades','alert'],['gestao-visual','Gestão Visual','eye']]],
+ ['Ferramentas & Calibração',[['equipamentos','Ferramentas e Equip.','wrench'],['calibracao','Calibração','gauge']]],
+ ['Rotina do Monitor',[['quadro-monitor','Quadro do Monitor','list'],['calendario','Calendário','cal']]],
  ['Inteligência',[['chefinho-ia','Chefinho IA','bot']]]
 ];
 const ALL=Object.fromEntries(NAV.flatMap(g=>g[1]).map(x=>[x[0],x]));
@@ -1642,14 +1724,14 @@ const V={};
 V.inicio=()=>{const k=kpi(),pa=preAudit(),na=nextAudit();
  return `<div class="ph"><div><h1>Dashboard</h1><p>Visão executiva · ${H.getDate()} de ${MES[H.getMonth()]} de ${H.getFullYear()}</p></div><a class="btn pri" href="#auditoria-rapida">${I('pen')} Nova auditoria</a></div>
  <section class="panel strip"><div class="gz">${arcGauge(k.conf)}<div><b style="font-size:13px">Conformidade geral</b><div class="small muted">Linha de Montagem · ${MES[H.getMonth()].slice(0,3)}/${String(H.getFullYear()).slice(2)}</div><div class="small ${k.conf>=TREND[4][1]?'c-ok':'c-bad'}" style="margin-top:6px">${k.conf>=TREND[4][1]?'+':''}${k.conf-TREND[4][1]} pp vs. mês anterior</div></div></div>
- <div class="stats">${[['Auditorias concluídas',k.done,'centro-risco',''],['NCs abertas',k.openNC,'nao-conformidades',k.openNC?'c-bad':'c-ok'],['Tarefas pendentes',k.tasksPend,'quadro-monitor',k.tasksPend?'c-warn':'c-ok'],['Cal. vencidas',k.expired,'calibracao',k.expired?'c-bad':'c-ok']].map(([l,v,h,c])=>`<a href="#${h}"><b class="num ${c}">${v}</b><small>${l}</small></a>`).join('')}</div></section>
+ <div class="stats">${[['O que está correto',S.eq.filter(e=>eqSt(e)==='conforme').length,'equipamentos','c-ok',`de ${S.eq.length} equipamentos`],['O que está vencendo',k.soon,'calibracao',k.soon?'c-warn':'c-ok','calibrações em 60 dias'],['O que está pendente',k.tasksPend+k.openNC+k.planned,'quadro-monitor','c-info',`${k.tasksPend} tarefas · ${k.openNC} NCs · ${k.planned} auditorias`],['O que pode reprovar',pa.c,'centro-risco',pa.c?'c-bad':'c-ok',pa.c?'itens críticos (VDA 6.1)':'nenhum item crítico']].map(([l,v,h,c,sub])=>`<a href="#${h}"><small class="q">${l}</small><b class="num ${c}">${v}</b><small>${sub}</small></a>`).join('')}</div></section>
  <div class="g12"><div>
   <section class="panel pad" style="display:flex;gap:20px;align-items:center;flex-wrap:wrap;border-left:4px solid var(--${tone(pa.score)})"><div style="width:200px">${speedo(pa.score,200)}</div><div class="grow" style="min-width:min(220px,100%)"><p class="lbl" style="margin-bottom:4px">Status da próxima auditoria</p><b style="font-size:15px">${esc(na?.title||'Nenhuma programada')}</b><div class="small muted">${na?`em ${na.date} dias · ${dmy(na.date)}`:''}</div>
    <div style="display:flex;gap:8px;margin-top:10px;flex-wrap:wrap">${pill(`VDA 6.1: ${pa.rating}`,tone(pa.score))}${pill(`${pa.c} críticos`,'bad')}${pill(`${pa.findings.length} pendências`,'warn')}</div>
    <div style="display:flex;gap:8px;margin-top:12px;flex-wrap:wrap"><a class="btn pri" href="#centro-risco">${I('risk')} Ver plano de preparação</a><a class="btn" href="#mapa">${I('map')} Ver no mapa 3D</a></div></div></section>
   <section class="panel pad"><p class="lbl">Taxa de conformidade · últimos 6 meses</p>${trendChart(k.conf)}</section>
  </div><div>
-  <section class="panel pad"><p class="lbl">Alertas operacionais</p><div class="rows">${[['alert','Calibrações vencidas',k.expired,'bad','calibracao'],['gauge','Vencendo em 30 dias',k.soon,'warn','calibracao'],['alert','NCs críticas',k.critNC,'bad','nao-conformidades'],['list','Tarefas pendentes',k.tasksPend,'warn','quadro-monitor'],['clip','Auditorias programadas',k.planned,'info','centro-risco']].map(([ic,l,v,c,h])=>`<a href="#${h}"><span class="c-${c}">${I(ic,'width="15" height="15"')}</span><span class="grow">${l}</span><b class="num c-${c}">${v}</b></a>`).join('')}</div></section>
+  <section class="panel pad"><p class="lbl">Alertas operacionais</p><div class="rows">${[['alert','Calibrações vencidas',k.expired,'bad','calibracao'],['gauge','Vencendo em 60 dias',k.soon,'warn','calibracao'],['alert','NCs críticas',k.critNC,'bad','nao-conformidades'],['list','Tarefas pendentes',k.tasksPend,'warn','quadro-monitor'],['clip','Auditorias programadas',k.planned,'info','centro-risco']].map(([ic,l,v,c,h])=>`<a href="#${h}"><span class="c-${c}">${I(ic,'width="15" height="15"')}</span><span class="grow">${l}</span><b class="num c-${c}">${v}</b></a>`).join('')}</div></section>
   <section class="panel pad"><p class="lbl">Atividade recente</p><div class="rows">${ACT.map(([t,x,r])=>`<div><span class="dot c-${{audit:'info',nc:'bad',plan:'ok',calib:'warn'}[t]}"></span><span class="grow small">${x}</span><span class="small muted num">${r}</span></div>`).join('')}</div></section>
  </div></div>`};
 V['centro-risco']=()=>{const pa=preAudit();const cats=[...new Set(pa.findings.map(f=>f.category))];
@@ -1675,7 +1757,7 @@ V.mapa=()=>{const cnt=l=>['conforme','atencao','vencido'].map(s=>l.filter(e=>eqS
  else{const L=S.eq.filter(e=>e.tact===mapTact),f=L[0];
   side=`<button class="btn" data-tact="" style="align-self:flex-start">← Linha completa</button><div class="m3h"><b>${mapTact}</b><span class="small muted">${f.area} › ${f.cell} › ${f.team}</span></div>
   <p class="lbl" style="margin:8px 0 0">Status no posto</p>${L.map(e=>{const s=eqSt(e);return `<div class="m3eq ${mapSel===e.id?'on':''}"><button class="m3n" data-sel="${e.id}"><b>${esc(e.name)}</b><span class="small muted"><span class="mono">${e.code}</span> · ${TYPE[e.type]}${e.venc!=null?` · validade ${dmy(e.venc)}`:''}</span></button>
-   <div class="seg" role="group" aria-label="Status de ${e.code}">${['conforme','atencao','vencido'].map(k=>`<button class="${s===k?'on '+ST[k][1]:''}" data-eqst="${e.id}:${k}">${ST[k][0]}</button>`).join('')}</div></div>`}).join('')}`}
+   <div class="seg" role="group" aria-label="Status de ${e.code}">${['conforme','atencao','vencido'].map(k=>`<button class="${s===k?'on '+ST[k][1]:''}" data-eqst="${e.id}:${k}">${ST[k][0]}</button>`).join('')}</div>${e.nota?`<span class="small c-warn">${esc(e.nota)}</span>`:''}<button class="lnk" data-eq="${e.id}">Ver ficha completa →</button></div>`}).join('')}`}
  return `<div class="ph"><div><h1>Mapa Digital 3D</h1><p>Linha de montagem em 3D · arraste para girar, role para aproximar, clique num tacto ou equipamento</p></div></div>
  <div class="m3grid"><div class="m3slot" id="m3slot"></div><aside class="panel pad m3side">${side}</aside></div>`};
 const M3={};
@@ -1755,42 +1837,114 @@ function m3mount(){if(!M3.wrap){m3init();if(M3.r)M3.ctl.addEventListener('start'
 V['painel-fabrica']=()=>{const pa=preAudit(),k=kpi(),na=nextAudit();
  return `<section class="tv"><div class="tv-h"><div><h2>CHEFINHO GLSI</h2><p>Painel de Fábrica · Área Parachoque · Turno ${new Date().getHours()<15?1:new Date().getHours()<21?2:3}</p></div><div style="display:flex;gap:14px;align-items:center"><div class="clock num" id="clock"></div><button class="btn tvfull" data-act="full">${I('full')} Tela cheia</button></div></div>
  <div class="tv-g"><div class="glass" style="text-align:center"><div style="font-weight:600;margin-bottom:6px">Preparação para auditoria</div>${speedo(pa.score,260,true)}<div style="margin-top:4px;color:#a9c4e8">VDA 6.1 · rating <b style="color:#fff">${pa.rating}</b></div></div>
-  <div style="display:flex;flex-direction:column;gap:12px">${[['Auditorias realizadas',k.done,'#4ade80'],['Pendências',pa.findings.length,'#fbbf24'],['Ferramentas vencendo',k.soon+k.expired,'#fbbf24']].map(([l,v,c])=>`<div class="glass"><b class="n num" style="color:${c}">${v}</b><small>${l}</small></div>`).join('')}
+  <div style="display:flex;flex-direction:column;gap:12px">${[['Auditorias realizadas',k.done,'#4ade80'],['Pendências',pa.findings.length,'#fbbf24'],['Calibrações vencendo ou vencidas',k.soon+k.expired,'#fbbf24']].map(([l,v,c])=>`<div class="glass"><b class="n num" style="color:${c}">${v}</b><small>${l}</small></div>`).join('')}
    ${na?`<div class="glass"><b style="font-size:20px">${dmy(na.date)}</b><small style="display:block">Próxima auditoria · ${esc(na.title)}</small></div>`:''}</div>
   <div class="glass" style="max-height:520px;overflow:auto"><div style="font-weight:600">Pendências críticas</div>${pa.findings.slice(0,7).map(f=>`<div class="tvf ${f.severity}"><b>${f.text}</b>${f.items.slice(0,2).map(i=>`<small>• ${esc(i)}</small>`).join('')}</div>`).join('')||'<p style="color:#4ade80">Nenhuma pendência encontrada</p>'}</div></div></section>
  <p class="small muted" style="margin:0">Feito para ficar aberto numa TV da linha. Atualiza junto com os dados do sistema.</p>`};
 
+const ATYPES=['Processo','Ferramentas','Equipamentos','Gestão Visual','Segurança','5S','Personalizada'];
 let qa=null;
-V['auditoria-rapida']=()=>{if(!qa)qa={type:'Torque',cell:'Célula A',auditor:'Filipi',tpl:0,items:S.templates[0].items.map(t=>({t,r:null})),obs:''};
- const done=qa.items.filter(i=>i.r).length,pct=Math.round(done/qa.items.length*100);
- return `<div class="ph"><div><h1>Auditoria Rápida</h1><p>Audite um posto em menos de 1 minuto</p></div></div>
- <section class="panel pad"><form class="form" id="qaf" onsubmit="return false"><label>Tipo de auditoria<select id="qa-type">${['Torque','Ferramentas','Equipamentos','Gestão Visual','Segurança','Processo','Bancadas'].map(t=>`<option ${qa.type===t?'selected':''}>${t}</option>`).join('')}</select></label>
-  <label>Célula<select id="qa-cell">${['Célula A','Célula B','Célula C','Célula D'].map(t=>`<option ${qa.cell===t?'selected':''}>${t}</option>`).join('')}</select></label>
-  <label>Auditor<input id="qa-aud" value="${esc(qa.auditor)}"></label>
-  <label>Checklist padrão<select id="qa-tpl">${S.templates.map((t,i)=>`<option value="${i}" ${qa.tpl==i?'selected':''}>${t.name}</option>`).join('')}</select></label></form></section>
- <section class="panel pad"><p class="lbl">Itens <span class="sp"></span><span class="num" style="text-transform:none;letter-spacing:0">${done}/${qa.items.length}</span></p><div class="progress" style="margin-bottom:12px"><i style="width:${pct}%"></i></div>
- <div style="display:flex;flex-direction:column;gap:6px">${qa.items.map((it,i)=>`<div class="ck"><span>${esc(it.t)}</span><div class="seg">${[['conforme','Conforme','ok'],['atencao','Atenção','warn'],['nao_conforme','Não conforme','bad']].map(([k,l,c])=>`<button class="${it.r===k?'on '+c:''}" data-qa="${i}:${k}">${l}</button>`).join('')}</div></div>`).join('')}</div>
- <label class="small muted" style="display:flex;flex-direction:column;gap:4px;margin-top:12px">Observação (opcional)<textarea id="qa-obs" rows="2">${esc(qa.obs)}</textarea></label>
- <div style="display:flex;gap:8px;justify-content:flex-end;margin-top:12px;flex-wrap:wrap"><button class="btn" data-act="qa-photo">${I('camera')} Foto de evidência</button><button class="btn pri" data-act="qa-save" ${done<qa.items.length?'disabled':''}>Salvar auditoria</button></div></section>`};
+const newQa=(type='Ferramentas',from=null)=>{const a=from&&S.audits.find(x=>x.id===from);return {type:a?.type||type,cell:a?.cell||'Célula A',auditor:'Filipi',items:TPL[a?.type||type].map(t=>({t,r:null,acao:''})),obs:'',photos:[],sig:null,from}};
+V['auditoria-rapida']=()=>{if(!qa)qa=newQa();const n=qa.items.length,done=qa.items.filter(i=>i.r).length,pct=n?Math.round(done/n*100):0,can=n&&done===n&&qa.sig;
+ const from=qa.from&&S.audits.find(a=>a.id===qa.from);
+ return `<div class="ph"><div><h1>Auditoria Rápida</h1><p>${from?`Executando: ${esc(from.title)}`:'Checklist, evidência com foto, não conformidade, plano de ação e assinatura digital'}</p></div></div>
+ <section class="panel pad"><p class="lbl">Tipo de auditoria</p><div class="chips">${ATYPES.map(t=>`<button class="chip ${qa.type===t?'on':''}" data-qtype="${t}">${t}</button>`).join('')}</div>
+ <form class="form" style="margin-top:12px" onsubmit="return false"><label>Célula<select id="qa-cell">${['Célula A','Célula B','Célula C','Célula D'].map(t=>`<option ${qa.cell===t?'selected':''}>${t}</option>`).join('')}</select></label><label>Auditor<input id="qa-aud" value="${esc(qa.auditor)}"></label></form></section>
+ <section class="panel pad"><p class="lbl">Checklist inteligente <span class="sp"></span><span class="num" style="text-transform:none;letter-spacing:0">${done}/${n}</span></p><div class="progress" style="margin-bottom:12px"><i style="width:${pct}%"></i></div>
+ <div style="display:flex;flex-direction:column;gap:6px">${qa.items.map((it,i)=>`<div class="ck"><span>${esc(it.t)}</span><div class="seg">${[['conforme','Conforme','ok'],['atencao','Atenção','warn'],['nao_conforme','Não conforme','bad']].map(([k,l,c])=>`<button class="${it.r===k?'on '+c:''}" data-qa="${i}:${k}">${l}</button>`).join('')}</div>${it.r==='nao_conforme'?`<input class="acao" id="acao-${i}" data-acao="${i}" placeholder="Plano de ação para esta não conformidade" value="${esc(it.acao)}">`:''}</div>`).join('')||'<p class="small muted" style="margin:0">Auditoria personalizada: adicione os itens que quer verificar.</p>'}</div>
+ <form class="ask" id="qaadd" style="margin-top:10px"><input id="qa-new" placeholder="Adicionar item ao checklist" autocomplete="off"><button class="btn" style="width:46px;padding:0" aria-label="Adicionar item">${I('plus')}</button></form>
+ <label class="small muted" style="display:flex;flex-direction:column;gap:4px;margin-top:12px">Observações e comentários<textarea id="qa-obs" rows="2">${esc(qa.obs)}</textarea></label></section>
+ <div class="g2"><section class="panel pad"><p class="lbl">Evidências fotográficas</p><div class="photos">${qa.photos.map((p,i)=>`<span class="pth"><img src="${p}" alt="Evidência ${i+1}"><button data-qpdel="${i}" aria-label="Remover foto">${I('x')}</button></span>`).join('')}<label class="padd">${I('camera')}<span>Tirar ou escolher foto</span><input type="file" accept="image/*" capture="environment" id="qa-photo" hidden></label></div></section>
+ <section class="panel pad"><p class="lbl">Assinatura digital <span class="sp"></span><button class="lnk" data-act="sig-clear">Limpar</button></p><canvas id="sig" class="sig" width="640" height="200" aria-label="Área para assinar"></canvas><p class="small muted" style="margin:6px 0 0">${qa.sig?'Assinado por '+esc(qa.auditor):'Assine com o dedo ou com o mouse'}</p></section></div>
+ <div style="display:flex;justify-content:flex-end;gap:10px;align-items:center;flex-wrap:wrap">${can?'':`<span class="small muted">${done<n||!n?'Responda todos os itens':'Falta a assinatura'} para salvar</span>`}<button class="btn pri" data-act="qa-save" ${can?'':'disabled'}>Salvar auditoria</button></div>`};
+function sigInit(){const c=document.getElementById('sig');if(!c)return;const x=c.getContext('2d');x.lineWidth=3;x.lineCap='round';x.lineJoin='round';x.strokeStyle=getComputedStyle(document.body).color;
+ if(qa.sig){const im=new Image();im.onload=()=>x.drawImage(im,0,0);im.src=qa.sig}
+ let on=false;const pt=ev=>{const b=c.getBoundingClientRect();return [(ev.clientX-b.left)*c.width/b.width,(ev.clientY-b.top)*c.height/b.height]};
+ c.onpointerdown=ev=>{on=true;c.setPointerCapture(ev.pointerId);const [a,b]=pt(ev);x.beginPath();x.moveTo(a,b)};
+ c.onpointermove=ev=>{if(!on)return;const [a,b]=pt(ev);x.lineTo(a,b);x.stroke()};
+ c.onpointerup=()=>{if(!on)return;on=false;qa.sig=c.toDataURL('image/png');render()}}
+function shrink(file,max,cb){const r=new FileReader();r.onload=()=>{const im=new Image();im.onload=()=>{const k=Math.min(1,max/Math.max(im.width,im.height)),c=document.createElement('canvas');c.width=Math.round(im.width*k);c.height=Math.round(im.height*k);c.getContext('2d').drawImage(im,0,0,c.width,c.height);cb(c.toDataURL('image/jpeg',.72))};im.src=r.result};r.readAsDataURL(file)}
+
+let audTab='proximas';
+const RES={conforme:['Conforme','ok'],atencao:['Atenção','warn'],nao_conforme:['Não conforme','bad']};
+V.auditorias=()=>{const k=kpi(),P=S.audits.filter(a=>a.status==='pendente').sort((a,b)=>a.date-b.date),Hs=S.audits.filter(a=>a.status==='concluida').sort((a,b)=>b.date-a.date);
+ return `<div class="ph"><div><h1>Auditorias</h1><p>${k.done} realizadas · ${k.conf}% conformes · ${P.length} programadas</p></div><a class="btn pri" href="#auditoria-rapida">${I('plus')} Nova auditoria</a></div>
+ <div class="g12"><div>
+ <div class="chips"><button class="chip ${audTab==='proximas'?'on':''}" data-audtab="proximas">Próximas (${P.length})</button><button class="chip ${audTab==='historico'?'on':''}" data-audtab="historico">Histórico (${Hs.length})</button></div>
+ ${audTab==='proximas'?`<section class="panel"><div class="rows" style="padding:6px 14px">${P.map(a=>`<div><span class="dot c-${a.date<0?'bad':'info'}"></span><span class="grow"><b>${esc(a.title)}</b><span class="small muted" style="display:block">${a.type} · ${esc(a.auditor)} · ${a.date<0?'<span class="c-bad">atrasada</span>':a.date===0?'hoje':`em ${a.date} dias`} (${dmy(a.date)})</span></span><button class="btn" data-start="${a.id}" style="padding:5px 12px;font-size:12px">Iniciar</button></div>`).join('')||'<div class="empty">Nenhuma auditoria programada</div>'}</div></section>`:
+ `<div style="display:flex;flex-direction:column;gap:8px">${Hs.map(a=>`<details class="find" style="--t:var(--${RES[a.result][1]})"><summary><span class="num small muted" style="width:42px">${dm(a.date)}</span><span class="grow"><b style="font-weight:600">${esc(a.title)}</b><span class="small muted" style="display:block">${a.type} · ${esc(a.auditor)}</span></span><b class="num">${a.score}%</b>${pill(...RES[a.result])}</summary><div style="padding:0 14px 12px">${a.items?`<div class="rows">${a.items.map(i=>`<div><span class="dot c-${RES[i.r][1]}"></span><span class="grow small">${esc(i.t)}${i.acao?`<span class="muted" style="display:block">Plano de ação: ${esc(i.acao)}</span>`:''}</span><span class="small c-${RES[i.r][1]}">${RES[i.r][0]}</span></div>`).join('')}</div>`:'<p class="small muted" style="margin:0">Registro anterior ao checklist digital.</p>'}${a.obs?`<p class="small" style="margin:8px 0 0">Obs.: ${esc(a.obs)}</p>`:''}${a.photos?.length?`<div class="photos" style="margin-top:8px">${a.photos.map(p=>`<span class="pth"><img src="${p}" alt="Evidência"></span>`).join('')}</div>`:''}${a.sig?`<div style="margin-top:8px"><span class="small muted">Assinatura de ${esc(a.auditor)}</span><img class="sigimg" src="${a.sig}" alt="Assinatura de ${esc(a.auditor)}"></div>`:''}</div></details>`).join('')}</div>`}
+ </div><div>
+ <section class="panel pad"><p class="lbl">Histórico de conformidade</p>${trendChart(k.conf)}</section>
+ <section class="panel pad"><p class="lbl">Nota média por tipo</p><div class="rows">${ATYPES.map(t=>{const L=Hs.filter(a=>a.type===t);if(!L.length)return'';const m=Math.round(L.reduce((x,a)=>x+a.score,0)/L.length);return `<div style="display:grid;grid-template-columns:100px 1fr 40px;gap:10px;align-items:center"><span class="small">${t}</span><span class="progress"><i style="width:${m}%;background:var(--${tone(m)})"></i></span><b class="small num">${m}%</b></div>`}).join('')}</div></section>
+ </div></div>`};
 
 let ncForm=false;
 const PR={critica:['Crítica','bad'],alta:['Alta','warn'],media:['Média','info'],baixa:['Baixa','']};
 const NS={aberta:['Aberta','bad'],em_andamento:['Em andamento','warn'],concluida:['Concluída','ok']};
 V['nao-conformidades']=()=>`<div class="ph"><div><h1>Não Conformidades</h1><p>${S.ncs.filter(n=>n.status!=='concluida').length} abertas · toque no status para avançar</p></div><button class="btn pri" data-act="nc-new">${I('plus')} Registrar</button></div>
- ${ncForm?`<section class="panel pad"><form class="form" id="ncf"><label class="full">Descrição *<input id="nc-d" required placeholder="Descreva a não conformidade"></label><label>Prioridade<select id="nc-p"><option value="alta">Alta</option><option value="critica">Crítica</option><option value="media">Média</option><option value="baixa">Baixa</option></select></label><label>Equipe<select id="nc-t">${['Equipe 1','Equipe 2','Equipe 3','Equipe 4','Equipe 5'].map(t=>`<option>${t}</option>`).join('')}</select></label><label>Responsável<input id="nc-r" value="Filipi"></label><label>Prazo (dias)<input id="nc-z" type="number" value="5" min="0"></label><div class="full" style="display:flex;justify-content:flex-end;gap:8px"><button type="button" class="btn" data-act="nc-new">Cancelar</button><button class="btn pri">Salvar</button></div></form></section>`:''}
- <section class="panel tw"><table><thead><tr><th>Descrição</th><th>Prioridade</th><th>Equipe</th><th>Responsável</th><th>Prazo</th><th>Status</th></tr></thead><tbody>
- ${S.ncs.map(n=>`<tr><td>${esc(n.desc)}</td><td>${pill(...PR[n.prio])}</td><td>${n.team}</td><td>${n.resp?esc(n.resp):'<span class="c-bad small">sem responsável</span>'}</td><td class="num ${n.prazo<0&&n.status!=='concluida'?'c-bad':''}">${dm(n.prazo)}</td><td><button class="pill s-${NS[n.status][1]}" style="border:0" data-nc="${n.id}">${NS[n.status][0]}</button></td></tr>`).join('')}</tbody></table></section>`;
+ ${ncForm?`<section class="panel pad"><form class="form" id="ncf"><label class="full">Descrição *<input id="nc-d" required placeholder="Descreva a não conformidade"></label><label>Prioridade<select id="nc-p"><option value="alta">Alta</option><option value="critica">Crítica</option><option value="media">Média</option><option value="baixa">Baixa</option></select></label><label>Equipe<select id="nc-t">${['Equipe 1','Equipe 2','Equipe 3','Equipe 4','Equipe 5'].map(t=>`<option>${t}</option>`).join('')}</select></label><label>Responsável<input id="nc-r" value="Filipi"></label><label>Prazo (dias)<input id="nc-z" type="number" value="5" min="0"></label><label class="full">Plano de ação<input id="nc-a" placeholder="O que será feito para resolver?"></label><div class="full" style="display:flex;justify-content:flex-end;gap:8px"><button type="button" class="btn" data-act="nc-new">Cancelar</button><button class="btn pri">Salvar</button></div></form></section>`:''}
+ <section class="panel tw"><table><thead><tr><th>Descrição e plano de ação</th><th>Prioridade</th><th>Equipe</th><th>Responsável</th><th>Prazo</th><th>Status</th></tr></thead><tbody>
+ ${S.ncs.map(n=>`<tr><td>${esc(n.desc)}${n.acao?`<div class="small muted">Ação: ${esc(n.acao)}</div>`:''}</td><td>${pill(...PR[n.prio])}</td><td>${n.team}</td><td>${n.resp?esc(n.resp):'<span class="c-bad small">sem responsável</span>'}</td><td class="num ${n.prazo<0&&n.status!=='concluida'?'c-bad':''}">${dm(n.prazo)}</td><td><button class="pill s-${NS[n.status][1]}" style="border:0" data-nc="${n.id}">${NS[n.status][0]}</button></td></tr>`).join('')}</tbody></table></section>`;
 
-V.calibracao=()=>{const L=S.eq.filter(e=>e.venc!=null).sort((a,b)=>a.venc-b.venc);
- return `<div class="ph"><div><h1>Centro de Calibração</h1><p>Status de calibração e certificados</p></div></div>
- <div class="g2" style="grid-template-columns:repeat(auto-fit,minmax(150px,1fr))">${[['Calibrados',L.filter(e=>e.venc>30).length,'ok'],['Vencendo em 30 dias',L.filter(e=>e.venc>=0&&e.venc<=30).length,'warn'],['Vencidos',L.filter(e=>e.venc<0).length,'bad'],['Sem data',S.eq.length-L.length,'']].map(([l,v,c])=>`<section class="panel pad"><b class="num c-${c}" style="font-size:28px;line-height:1">${v}</b><div class="small muted">${l}</div></section>`).join('')}</div>
- <div class="cards">${L.map(e=>{const c=e.venc<0?'bad':e.venc<=30?'warn':'ok';return `<section class="panel pad" style="display:flex;flex-direction:column;gap:6px;border-top:3px solid var(--${c})"><div style="display:flex;justify-content:space-between"><span class="mono c-m">${e.code}</span>${e.cert?pill('Certificado','ok'):pill('Sem certificado','warn')}</div><b>${esc(e.name)}</b><div class="small muted">${e.tact} · ${e.cell}</div><div class="small c-${c}" style="font-weight:600">${e.venc<0?`Vencido há ${-e.venc} dias`:e.venc<=30?`Vence em ${e.venc} dias`:`${e.venc} dias restantes`}</div><div class="small muted">Validade ${dmy(e.venc)}</div>${e.venc<=30?`<button class="btn" data-recal="${e.id}" style="align-self:flex-start">Registrar nova calibração</button>`:''}</section>`}).join('')}</div>`};
+V.calibracao=()=>{const L=S.eq.filter(e=>e.venc!=null).sort((a,b)=>a.venc-b.venc),sc=k=>L.filter(e=>stage(e.venc)===k).length;
+ return `<div class="ph"><div><h1>Controle de Calibração</h1><p>Nunca mais perder um vencimento · ${L.length} itens calibráveis</p></div></div>
+ <section class="panel pad"><p class="lbl">Alertas automáticos</p><div class="ladder">${[['60','60 dias antes'],['30','30 dias antes'],['15','15 dias antes'],['7','7 dias antes'],['venc','No vencimento']].map(([k,l])=>`<div class="rung ${sc(k)?'s-'+STG[k][1]:''}"><b class="num">${sc(k)}</b><span>${l}</span></div>`).join('')}</div><p class="small muted" style="margin:10px 0 0">O responsável é avisado em cada etapa. ${L.filter(e=>!stage(e.venc)).length} itens estão em dia, sem alerta.</p></section>
+ <section class="panel tw"><table><thead><tr><th>Equipamento</th><th>Calibrado em</th><th>Validade</th><th>Certificado</th><th>Alerta</th><th></th></tr></thead><tbody>
+ ${L.map(e=>{const g=stage(e.venc),na=nextAlert(e.venc);return `<tr><td><button class="lnk" data-eq="${e.id}"><b>${e.code}</b> ${esc(e.name)}</button><div class="small muted">${e.tact} · ${e.resp} · ${e.hist.length} calibrações no histórico</div></td><td class="num">${dmy(e.cal)}</td><td class="num ${e.venc<0?'c-bad':''}">${dmy(e.venc)}<div class="small muted">${e.venc<0?`vencido há ${-e.venc} dias`:`em ${e.venc} dias`}</div></td><td class="mono">${e.hist.at(-1)?.cert||'—'}</td><td>${g?pill(STG[g][0],STG[g][1]):`<span class="small muted">1º alerta em ${dmy(na[1])}</span>`}</td><td>${g?`<button class="btn" data-recal="${e.id}" style="padding:5px 11px;font-size:12px">Registrar calibração</button>`:''}</td></tr>`}).join('')}</tbody></table></section>`};
+
+/* ----- Ferramentas e Equipamentos: cadastro completo ----- */
+const GRP=[['','Todos'],['aparafusadeira','Ferramentas'],['torquimetro','Torquímetros'],['maquina','Máquinas'],['dispositivo','Dispositivos'],['equip','Equipamentos']];
+let eqG='',eqQ='',modalEq=null,modalR=null;
+const eqThumb=e=>e.photo?`<img class="ph-img" src="${e.photo}" alt="Foto de ${esc(e.code)}">`:`<span class="ph-ico">${I(TIC[e.type])}</span>`;
+V.equipamentos=()=>{const L=S.eq.filter(e=>(!eqG||(eqG==='equip'?['bancada','medicao'].includes(e.type):e.type===eqG))&&(!eqQ||[e.code,e.name,e.maker,e.model,e.serial,e.tact,e.cell,e.resp].join(' ').toLowerCase().includes(eqQ.toLowerCase())));
+ const c=['conforme','atencao','vencido'].map(x=>S.eq.filter(e=>eqSt(e)===x).length);
+ return `<div class="ph"><div><h1>Ferramentas e Equipamentos</h1><p>${S.eq.length} itens · <span class="c-ok">${c[0]} conformes</span> · <span class="c-warn">${c[1]} em atenção</span> · <span class="c-bad">${c[2]} vencidos</span></p></div></div>
+ <div class="tools"><input id="eqq" placeholder="Buscar por código, nome, fabricante, série, tacto ou responsável…" value="${esc(eqQ)}" autocomplete="off"></div>
+ <div class="chips">${GRP.map(([v,l])=>`<button class="chip ${eqG===v?'on':''}" data-eqg="${v}">${l}</button>`).join('')}</div>
+ <div class="cards">${L.map(e=>{const s=eqSt(e);return `<button class="panel eqc" data-eq="${e.id}"><span class="eqph">${eqThumb(e)}</span><span class="grow" style="min-width:0;display:flex;flex-direction:column;gap:2px"><span style="display:flex;justify-content:space-between;gap:8px"><span class="mono c-m">${e.code}</span>${pill(ST[s][0],ST[s][1])}</span><b>${esc(e.name)}</b><span class="small muted">${e.maker} · ${e.model}</span><span class="small muted">${e.tact} · ${e.cell} · ${e.resp}</span></span></button>`}).join('')||'<div class="panel empty">Nenhum item encontrado</div>'}</div>`};
+function eqModal(){const e=S.eq.find(x=>x.id===modalEq);if(!e)return '';const s=eqSt(e),na=e.venc!=null&&e.venc>=0?nextAlert(e.venc):null;
+ return `<div class="modal-bg" data-close="1"></div><section class="modal panel" role="dialog" aria-modal="true" aria-label="${esc(e.name)}">
+ <div class="mh"><span class="mono c-m">${e.code}</span>${pill(ST[s][0],ST[s][1])}<span class="grow"></span><button class="tbtn ic" data-act="modal-close" aria-label="Fechar">${I('x')}</button></div>
+ <div class="mgrid"><div class="mphoto"><span class="eqph big">${eqThumb(e)}</span><label class="btn" style="cursor:pointer">${I('camera')} ${e.photo?'Trocar foto':'Adicionar foto'}<input type="file" accept="image/*" capture="environment" id="eqphoto" hidden></label></div>
+ <div style="min-width:0"><h2 style="font-size:19px;font-weight:700">${esc(e.name)}</h2>${e.nota?`<p class="small c-warn" style="margin:4px 0 0">${esc(e.nota)}</p>`:''}
+ <dl class="dl">${[['Tipo',TYPE[e.type]],['Fabricante',e.maker],['Modelo',e.model],['Nº de série',`<span class="mono">${e.serial}</span>`],['Localização',`${e.factory} › ${e.area} › ${e.cell} › ${e.team} › ${e.tact}`],['Responsável',e.resp],['Calibração',e.cal==null?'Não se aplica':`${dmy(e.cal)} · validade ${dmy(e.venc)}`],['Certificado',e.hist.length?`<span class="mono">${e.hist.at(-1).cert}</span>`:'—'],['Próximo alerta',e.venc==null?'—':e.venc<0?'<span class="c-bad">Vencido</span>':`${na[0]?na[0]+' dias antes':'No vencimento'} · ${dmy(na[1])}`]].map(([k,v])=>`<dt>${k}</dt><dd>${v}</dd>`).join('')}</dl></div></div>
+ ${e.hist.length?`<p class="lbl" style="margin:14px 0 6px">Histórico de calibração</p><div class="rows">${[...e.hist].reverse().map(h=>`<div><span class="dot c-ok"></span><span class="grow small">Calibrado em ${dmy(h.d)} · válido até ${dmy(h.d+365)}</span><span class="mono c-m">${h.cert}</span></div>`).join('')}</div>`:''}
+ <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:14px">${e.venc!=null&&e.venc<=60?`<button class="btn pri" data-recal="${e.id}">Registrar nova calibração</button>`:''}<button class="btn" data-mapgo="${e.id}">${I('map')} Ver no mapa 3D</button></div></section>`}
+
+/* ----- Gestão Visual ----- */
+const VC={boa:['Boa','ok'],regular:['Regular','info'],deteriorada:['Deteriorada','warn'],substituir:['Substituir','bad']};
+let visT='';
+V['gestao-visual']=()=>{const L=S.visual.filter(v=>!visT||v.type===visT);
+ return `<div class="ph"><div><h1>Gestão Visual</h1><p>Etiquetas, plaquetas e sinalizações · histórico e última troca</p></div></div>
+ <div class="chips">${[['','Todos'],['Etiqueta','Etiquetas'],['Plaqueta','Plaquetas'],['Sinalização','Sinalizações'],['Demarcação','Demarcações']].map(([v,l])=>`<button class="chip ${visT===v?'on':''}" data-vist="${v}">${l}</button>`).join('')}</div>
+ <div class="cards">${L.map(v=>`<section class="panel pad" style="display:flex;flex-direction:column;gap:8px"><div style="display:flex;justify-content:space-between;gap:8px;align-items:flex-start"><b>${esc(v.name)}</b>${pill(...VC[v.cond])}</div><div class="small muted">${v.type} · ${v.cell}${v.tact!=='—'?' · '+v.tact:''}</div><div class="small ${v.last<-90?'c-warn':'muted'}">Última troca: ${dmy(v.last)} · há ${-v.last} dias${v.last<-90?' (mais de 90)':''}</div><details><summary class="small" style="cursor:pointer;color:var(--primary)">Histórico (${v.hist.length})</summary><div class="rows" style="margin-top:4px">${[...v.hist].reverse().map(h=>`<div class="small"><span class="dot c-ok"></span><span class="grow">${esc(h.what)}</span><span class="muted num">${dmy(h.d)}</span></div>`).join('')}</div></details><button class="btn" data-vis="${v.id}" style="align-self:flex-start">Registrar troca</button></section>`).join('')}</div>`};
+
+/* ----- Calendário: dia, semana e mês ----- */
+let calV='mes';const calA=new Date(H);
+const keyOf=d=>d.getFullYear()+'-'+d.getMonth()+'-'+d.getDate();
+function calEvents(){const E=[];S.audits.forEach(a=>E.push({d:a.date,t:a.title,c:a.status==='concluida'?'ok':a.date<0?'bad':'info',k:'Auditoria'}));S.eq.forEach(e=>{if(e.venc!=null)E.push({d:e.venc,t:'Calibração vence · '+e.code,c:e.venc<0?'bad':'warn',k:'Calibração'})});S.rev.forEach(r=>E.push({d:r.date,t:r.title,c:'ia',k:'Revisão'}));
+ const m={};E.forEach(x=>{const k=keyOf(dd(x.d));(m[k]=m[k]||[]).push(x)});return m}
+const evHtml=(L,full)=>(L||[]).map(x=>full?`<div class="evr"><span class="pill s-${x.c}">${x.k}</span><span>${esc(x.t)}</span></div>`:`<span class="ev s-${x.c}" title="${esc(x.t)}">${esc(x.t)}</span>`).join('');
+V.calendario=()=>{const M=calEvents(),y=calA.getFullYear(),m=calA.getMonth();let body,title;
+ if(calV==='mes'){title=`${MES[m]} de ${y}`;const n=new Date(y,m+1,0).getDate(),off=new Date(y,m,1).getDay(),cells=[];for(let i=0;i<off;i++)cells.push('<div class="d out"></div>');
+  for(let d=1;d<=n;d++){const dt=new Date(y,m,d);cells.push(`<button class="d ${keyOf(dt)===keyOf(H)?'today':''}" data-calday="${dt.getTime()}"><b class="num">${d}</b>${evHtml(M[keyOf(dt)])}</button>`)}
+  body=`<div class="cal">${['dom','seg','ter','qua','qui','sex','sáb'].map(d=>`<div class="h">${d}</div>`).join('')}${cells.join('')}</div>`}
+ else if(calV==='semana'){const st=new Date(calA);st.setDate(st.getDate()-st.getDay());const days=[...Array(7)].map((_,i)=>{const d=new Date(st);d.setDate(d.getDate()+i);return d});
+  title=`Semana de ${days[0].getDate()}/${days[0].getMonth()+1} a ${days[6].getDate()}/${days[6].getMonth()+1}`;
+  body=`<div class="wk">${days.map(d=>`<div class="wd ${keyOf(d)===keyOf(H)?'today':''}"><b>${['dom','seg','ter','qua','qui','sex','sáb'][d.getDay()]} ${d.getDate()}</b>${evHtml(M[keyOf(d)],true)||'<span class="small muted">—</span>'}</div>`).join('')}</div>`}
+ else{title=calA.toLocaleDateString('pt-BR',{weekday:'long',day:'numeric',month:'long'});body=`<div style="display:flex;flex-direction:column;gap:8px">${evHtml(M[keyOf(calA)],true)||'<div class="empty">Nada agendado neste dia</div>'}</div>`}
+ return `<div class="ph"><div><h1>Calendário</h1><p>Auditorias, calibrações e revisões</p></div><div class="legend"><span><i style="background:var(--info)"></i>Auditoria</span><span><i style="background:var(--ok)"></i>Concluída</span><span><i style="background:var(--warn)"></i>Calibração</span><span><i style="background:var(--ia)"></i>Revisão</span><span><i style="background:var(--bad)"></i>Atraso ou vencimento</span></div></div>
+ <div class="tools" style="align-items:center"><div class="seg">${[['dia','Dia'],['semana','Semana'],['mes','Mês']].map(([v,l])=>`<button class="${calV===v?'on ok':''}" data-calv="${v}">${l}</button>`).join('')}</div><span class="grow"></span><button class="btn" data-cal="-1" aria-label="Anterior">‹</button><button class="btn" data-cal="0">Hoje</button><button class="btn" data-cal="1" aria-label="Próximo">›</button></div>
+ <section class="panel pad"><p class="lbl" style="text-transform:none;letter-spacing:0;font-size:15px;color:var(--fg);font-weight:600">${title}</p>${body}</section>`};
 
 let shift='1',tForm=false;
 const TS={pendente:'Pendente',em_andamento:'Em andamento',concluida:'Concluída'};
-V['quadro-monitor']=()=>{const T=S.tasks.filter(t=>t.shift===shift);
- return `<div class="ph"><div><h1>Quadro do Monitor</h1><p>Acompanhe as tarefas por turno</p></div><button class="btn pri" data-act="t-new">${I('plus')} Nova tarefa</button></div>
- <div class="chips">${[['1','Turno 1 · 06:00–15:00'],['2','Turno 2 · 15:00–23:45'],['3','Turno 3 · 21:00–06:00']].map(([v,l])=>`<button class="chip ${shift===v?'on':''}" data-shift="${v}">${l}</button>`).join('')}</div>
+let catF='';
+V['quadro-monitor']=()=>{const T=S.tasks.filter(t=>t.shift===shift&&(!catF||t.cat===catF));
+ const prog=c=>{const L=S.tasks.filter(t=>t.cat===c);const d=L.filter(t=>t.status==='concluida').length;return [d,L.length,L.length?Math.round(d/L.length*100):100]};
+ return `<div class="ph"><div><h1>Quadro do Monitor</h1><p>Atividades diárias, semanais e mensais · progresso e pendências</p></div><button class="btn pri" data-act="t-new">${I('plus')} Nova tarefa</button></div>
+ <div class="g2" style="grid-template-columns:repeat(auto-fit,minmax(200px,1fr))">${[['diaria','Diárias'],['semanal','Semanais'],['mensal','Mensais']].map(([c,l])=>{const [d,n,p]=prog(c);return `<button class="panel pad prog ${catF===c?'on':''}" data-catf="${c}"><span style="display:flex;justify-content:space-between"><b>${l}</b><b class="num c-${p===100?'ok':'warn'}">${d}/${n}</b></span><span class="progress"><i style="width:${p}%;background:var(--${p===100?'ok':'primary'})"></i></span><span class="small muted">${n-d?`${n-d} pendente${n-d>1?'s':''}`:'Tudo concluído'}</span></button>`}).join('')}</div>
+ <div class="chips">${[['1','Turno 1 · 06:00–15:00'],['2','Turno 2 · 15:00–23:45'],['3','Turno 3 · 21:00–06:00']].map(([v,l])=>`<button class="chip ${shift===v?'on':''}" data-shift="${v}">${l}</button>`).join('')}${catF?`<button class="chip" data-catf="">Limpar filtro ×</button>`:''}</div>
  ${tForm?`<section class="panel pad"><form class="form" id="tf"><label class="full">Tarefa *<input id="t-n" required placeholder="Ex.: verificar torquímetros"></label><label>Categoria<select id="t-c"><option value="diaria">Diária</option><option value="semanal">Semanal</option><option value="mensal">Mensal</option></select></label><label>Área<input id="t-a" value="Parachoque"></label><div class="full" style="display:flex;justify-content:flex-end;gap:8px"><button type="button" class="btn" data-act="t-new">Cancelar</button><button class="btn pri">Criar tarefa</button></div></form></section>`:''}
  <div class="kan">${Object.entries(TS).map(([k,l])=>{const L=T.filter(t=>t.status===k);return `<div class="col"><h3><span class="dot c-${{pendente:'m',em_andamento:'warn',concluida:'ok'}[k]}"></span>${l} <span class="pill">${L.length}</span></h3>
   ${L.map(t=>`<div class="panel task"><b>${esc(t.name)}</b><div style="display:flex;gap:6px;flex-wrap:wrap">${pill({diaria:'Diária',semanal:'Semanal',mensal:'Mensal'}[t.cat],'info')}<span class="pill">${esc(t.area)}</span></div><div class="mv">${Object.keys(TS).filter(x=>x!==k).map(x=>`<button data-mv="${t.id}:${x}">→ ${TS[x]}</button>`).join('')}</div></div>`).join('')||'<div class="small muted" style="padding:8px 4px">Nenhuma tarefa</div>'}</div>`}).join('')}</div>`};
@@ -1811,9 +1965,11 @@ V['chefinho-ia']=()=>`<div class="bot-h"><span class="b">${I('bot')}</span><div>
 function contexto(){const pa=preAudit(),teams={};S.ncs.filter(n=>n.status!=='concluida').forEach(n=>teams[n.team]=(teams[n.team]||0)+1);
  return {data:dmy(0),area:'Linha de Montagem · Fábrica Taubaté (Parachoque, Portas, Painéis)',
   prontidao:{score:pa.score,ratingVDA61:pa.rating,situacao:pa.label,achados:pa.findings.map(f=>({categoria:f.category,severidade:f.severity,texto:f.text,itens:f.items}))},
-  equipamentos:S.eq.map(e=>({codigo:e.code,nome:e.name,tacto:e.tact,celula:e.cell,equipe:e.team,status:eqSt(e),validade:e.venc==null?null:dmy(e.venc),certificado:e.cert})),
+  equipamentos:S.eq.map(e=>({codigo:e.code,nome:e.name,tipo:TYPE[e.type],fabricante:e.maker,modelo:e.model,serie:e.serial,tacto:e.tact,celula:e.cell,equipe:e.team,responsavel:e.resp,status:eqSt(e),observacao:e.nota||undefined,calibradoEm:e.cal==null?null:dmy(e.cal),validade:e.venc==null?null:dmy(e.venc),alerta:e.venc==null?null:(STG[stage(e.venc)]?.[0]||'em dia'),certificado:e.hist.at(-1)?.cert})),
+  gestaoVisual:S.visual.map(v=>({item:v.name,tipo:v.type,condicao:v.cond,ultimaTroca:dmy(v.last)})),
+  revisoes:S.rev.map(r=>({titulo:r.title,data:dmy(r.date)})),
   auditorias:S.audits.map(a=>({titulo:a.title,data:dmy(a.date),status:a.status==='pendente'&&a.date<0?'atrasada':a.status,resultado:a.result,nota:a.score})),
-  naoConformidades:S.ncs.map(n=>({descricao:n.desc,prioridade:n.prio,equipe:n.team,responsavel:n.resp||'sem responsável',prazo:dmy(n.prazo),status:n.status})),
+  naoConformidades:S.ncs.map(n=>({descricao:n.desc,planoDeAcao:n.acao||'',prioridade:n.prio,equipe:n.team,responsavel:n.resp||'sem responsável',prazo:dmy(n.prazo),status:n.status})),
   pendenciasPorEquipe:teams,tarefasPendentes:S.tasks.filter(t=>t.status!=='concluida').map(t=>`${t.name} (turno ${t.shift}, ${t.cat})`)}}
 let sampleP;const getSample=()=>sampleP??=(window.claude?window.claude.use('sample').catch(()=>null):Promise.resolve(null));
 function offline(q){const c=contexto(),pa=preAudit(),l=q.toLowerCase(),li=a=>a.length?a.map(x=>'- '+x).join('\n'):'- Nenhum';
@@ -1821,7 +1977,7 @@ function offline(q){const c=contexto(),pa=preAudit(),l=q.toLowerCase(),li=a=>a.l
  if(/\bncs?\b|não conform|nao conform/.test(l)&&!l.includes('reprovar'))return `**Não conformidades em aberto:**\n${li(S.ncs.filter(n=>n.status!=='concluida').map(n=>`${n.desc} — ${PR[n.prio][0]}, ${n.team}, ${n.resp||'sem responsável'}, prazo ${dmy(n.prazo)}`))}`;
  if(/tarefa|turno|monitor|rotina/.test(l))return `**Tarefas pendentes:**\n${li(S.tasks.filter(t=>t.status!=='concluida').map(t=>`${t.name} — turno ${t.shift}, ${({diaria:'diária',semanal:'semanal',mensal:'mensal'})[t.cat]}`))}`;
  if(/tacto|mapa|onde|máquina|maquina|equipamento/.test(l)&&!l.includes('certificado'))return `**Equipamentos que pedem atenção:**\n${li(S.eq.filter(e=>eqSt(e)!=='conforme'||(e.venc!=null&&e.venc<=30)).map(e=>`${e.code} ${e.name} — ${e.tact}, ${e.cell}: ${ST[eqSt(e)][0]}${e.venc!=null?`, validade ${dmy(e.venc)}`:''}`))}`;
- if(l.includes('vence'))return `**Vencimentos dos próximos 30 dias e vencidos:**\n${li(S.eq.filter(e=>e.venc!=null&&e.venc<=30).sort((a,b)=>a.venc-b.venc).map(e=>`${e.code} ${e.name} — ${e.venc<0?`**vencido** desde ${dmy(e.venc)}`:dmy(e.venc)} (${e.tact})`))}\n\nPrioridade: tirar de uso o que já venceu e agendar o laboratório para o resto.`;
+ if(l.includes('vence'))return `**Vencimentos dos próximos 60 dias e vencidos:**\n${li(S.eq.filter(e=>e.venc!=null&&e.venc<=60).sort((a,b)=>a.venc-b.venc).map(e=>`${e.code} ${e.name} — ${e.venc<0?`**vencido** desde ${dmy(e.venc)}`:dmy(e.venc)} (${e.tact})`))}\n\nPrioridade: tirar de uso o que já venceu e agendar o laboratório para o resto.`;
  if(l.includes('atrasad'))return `**Auditorias atrasadas:**\n${li(S.audits.filter(a=>a.status==='pendente'&&a.date<0).map(a=>`${a.title} — era para ${dmy(a.date)} (${a.auditor})`))}\n\nCada atraso conta como achado crítico na pré-auditoria.`;
  if(l.includes('certificado'))return `**Equipamentos sem certificado:**\n${li(S.eq.filter(e=>!e.cert).map(e=>`${e.code} ${e.name} — ${e.tact}`))}`;
  if(l.includes('equipe'))return `**NCs abertas por equipe:**\n${li(Object.entries(c.pendenciasPorEquipe).sort((a,b)=>b[1]-a[1]).map(([t,n])=>`${t}: ${n}`))}`;
@@ -1868,26 +2024,32 @@ function render(){const r=route(),pa=preAudit();
  const dk=document.documentElement.dataset.theme?document.documentElement.dataset.theme==='dark':matchMedia('(prefers-color-scheme: dark)').matches;document.getElementById('themeBtn').innerHTML=I(dk?'sun':'moon');
  drawTour();save();
  document.getElementById('pageTitle').textContent=ALL[r][1];
- const v=document.getElementById('view');v.innerHTML=V[r]();
+ if(modalEq&&modalR!==r)modalEq=null;
+ const v=document.getElementById('view');v.innerHTML=V[r]()+(modalEq?eqModal():'');
+ if(r==='auditoria-rapida')sigInit();
  const cb=document.getElementById('chatbox');if(cb)cb.scrollTop=cb.scrollHeight;
  if(r==='mapa')m3mount();
  clearInterval(clockT);if(r==='painel-fabrica'){const tick=()=>{const c=document.getElementById('clock');if(c)c.textContent=new Date().toLocaleTimeString('pt-BR')};tick();clockT=setInterval(tick,1000)}}
 window.addEventListener('hashchange',()=>{render();scrollTo(0,0)});
-/* ===== modo apresentação: roteiro guiado de 60% (C) até 91% (A) ===== */
+/* ===== modo apresentação: roteiro guiado na ordem dos slides, de 60% (C) até 91% (A) ===== */
+const cnt3=()=>['conforme','atencao','vencido'].map(x=>S.eq.filter(e=>eqSt(e)===x).length);
 const TOUR=[
- {h:'inicio',t:'Visão executiva',x:'O Dashboard junta tudo que o monitor precisa: conformidade das auditorias, NCs, tarefas, calibrações e a nota da próxima auditoria.'},
- {h:'centro-risco',t:'O problema',x:'A pré-auditoria aplica as regras da VDA 6.1 em tempo real. Hoje a área está em 60% (C): um certificado vencido é pergunta-âncora e trava a nota.'},
- {h:'mapa',t:'Onde está o problema',x:'No mapa 3D a linha aparece inteira. A máquina de solda MQ-210, no Tacto 06, está em vermelho.',go:()=>{mapTact='Tacto 06';mapSel=10}},
- {h:'calibracao',t:'Resolver: calibração',x:'Registrar a nova calibração da MQ-210 tira o item crítico.',a:'Registrar calibração da MQ-210',ok:()=>S.eq[9].venc>=0,do:()=>{Object.assign(S.eq[9],{venc:365,cert:true,st:null})}},
- {h:'nao-conformidades',t:'Resolver: não conformidade',x:'A NC aberta da MQ-210 passa para em andamento, com responsável.',a:'Avançar a NC da MQ-210',ok:()=>S.ncs.find(n=>n.id===1)?.status!=='aberta',do:()=>{const n=S.ncs.find(n=>n.id===1);if(n)n.status='em_andamento'}},
- {h:'quadro-monitor',t:'Resolver: rotina do turno',x:'As tarefas diárias do Turno 1 são concluídas no Quadro do Monitor.',a:'Concluir tarefas do dia',ok:()=>!S.tasks.some(t=>t.cat==='diaria'&&t.status!=='concluida'),do:()=>S.tasks.forEach(t=>{if(t.cat==='diaria')t.status='concluida'}),pre:()=>{shift='1'}},
- {h:'centro-risco',t:'Resultado',x:'Com três ações a área vai para A: pronta para auditoria. Sem planilha, sem papel, e o líder vê a mesma informação na hora.'},
- {h:'chefinho-ia',t:'Chefinho IA',x:'A IA responde sobre os dados reais da área e escreve o relatório do turno ou o plano de preparação em segundos.'}];
+ {h:'inicio',t:'Todo dia, a área pronta',x:'O Dashboard responde as quatro perguntas do Chefinho: o que está correto, o que está vencendo, o que está pendente e o que pode reprovar.'},
+ {h:'centro-risco',t:'O que pode reprovar',x:()=>`A pré-auditoria aplica as regras da VDA 6.1 em tempo real. Hoje a área está em ${preAudit().score}% (${preAudit().rating}): certificado vencido é pergunta-âncora e trava a nota.`},
+ {h:'mapa',t:'Mapa Digital da Linha',x:()=>{const c=cnt3();return `Da fábrica até cada equipe: ${S.eq.length} equipamentos mapeados, ${c[0]} conformes, ${c[1]} em atenção e ${c[2]} vencidos. A MQ-210, no Tacto 06, está em vermelho.`},go:()=>{mapTact='Tacto 06';mapSel=EQ('MQ-210').id}},
+ {h:'equipamentos',t:'Cadastro completo',x:'Código, modelo, fabricante, número de série, foto, localização e responsável de cada ferramenta, máquina, dispositivo e torquímetro. Se o auditor perguntar, a resposta está a um clique.',go:()=>{modalEq=EQ('MQ-210').id;modalR='equipamentos'}},
+ {h:'calibracao',t:'Nunca mais perder um vencimento',x:'Data de calibração, validade, certificado e histórico, com alertas 60, 30, 15 e 7 dias antes e no vencimento. Registrar a calibração dos dois itens vencidos tira o item crítico.',a:'Registrar calibração da MQ-210 e do PQ-512',ok:()=>['MQ-210','PQ-512'].every(c=>EQ(c).venc>=0),do:()=>['MQ-210','PQ-512'].forEach(c=>{const e=EQ(c);if(e.venc<0)recal(e)})},
+ {h:'auditoria-rapida',t:'Auditorias inteligentes',x:'Processo, ferramentas, equipamentos, gestão visual, segurança, 5S ou personalizada. Checklist no celular, foto como evidência, não conformidade com plano de ação e assinatura digital.'},
+ {h:'nao-conformidades',t:'Resolver: não conformidade',x:'A NC da MQ-210 já tem plano de ação e responsável. Ela passa para em andamento.',a:'Avançar a NC da MQ-210',ok:()=>S.ncs.find(n=>n.id===1)?.status!=='aberta',do:()=>{const n=S.ncs.find(n=>n.id===1);if(n)n.status='em_andamento'}},
+ {h:'quadro-monitor',t:'Rotina do monitor',x:'Atividades diárias, semanais e mensais com progresso e pendências. As tarefas diárias do Turno 1 são concluídas.',a:'Concluir tarefas do dia',ok:()=>!S.tasks.some(t=>t.cat==='diaria'&&t.status!=='concluida'),do:()=>S.tasks.forEach(t=>{if(t.cat==='diaria')t.status='concluida'}),pre:()=>{shift='1';catF=''}},
+ {h:'calendario',t:'Calendário',x:'Auditorias, calibrações e revisões no mesmo lugar, em visão de dia, semana e mês.',pre:()=>{calV='mes'}},
+ {h:'centro-risco',t:'Resultado',x:()=>`Com três ações a área foi para ${preAudit().score}% (${preAudit().rating}). O objetivo não é facilitar a auditoria: é a área estar pronta todos os dias.`},
+ {h:'chefinho-ia',t:'Chefinho IA',x:'Pergunte em português e receba a resposta na hora: o que vence este mês, quais auditorias estão atrasadas, o que pode reprovar a área.'}];
 let tourOn=false,tourI=0;
-function tourGo(i){tourI=Math.max(0,Math.min(TOUR.length-1,i));const st=TOUR[tourI];st.go?.();st.pre?.();if(location.hash.slice(1)!==st.h)location.hash=st.h;else render()}
+function tourGo(i){tourI=Math.max(0,Math.min(TOUR.length-1,i));const st=TOUR[tourI];modalEq=null;st.go?.();st.pre?.();if(location.hash.slice(1)!==st.h)location.hash=st.h;else render()}
 function drawTour(){const el=document.getElementById('tour');el.hidden=!tourOn;if(!tourOn)return;const st=TOUR[tourI],done=st.ok?.();
  el.innerHTML=`<div class="tour-h"><span class="pill s-info">Passo ${tourI+1} de ${TOUR.length}</span><span class="grow"></span><button class="tbtn ic" data-tour="close" aria-label="Fechar apresentação">${I('x')}</button></div>
- <b>${st.t}</b><p>${st.x}</p>${st.a?`<button class="btn ${done?'':'pri'}" data-tour="do" ${done?'disabled':''}>${done?'Feito ✓':st.a}</button>`:''}
+ <b>${st.t}</b><p>${typeof st.x==='function'?st.x():st.x}</p>${st.a?`<button class="btn ${done?'':'pri'}" data-tour="do" ${done?'disabled':''}>${done?'Feito ✓':st.a}</button>`:''}
  <div class="tour-dots">${TOUR.map((_,i)=>`<i class="${i===tourI?'on':''}"></i>`).join('')}</div>
  <div class="tour-nav"><button class="btn" data-tour="prev" ${tourI?'':'disabled'}>Anterior</button><button class="btn pri" data-tour="next">${tourI===TOUR.length-1?'Concluir':'Próximo'}</button></div>`}
 document.getElementById('tour').addEventListener('click',e=>{const b=e.target.closest('[data-tour]');if(!b)return;const a=b.dataset.tour;
@@ -1896,22 +2058,38 @@ document.getElementById('tourBtn').onclick=()=>{tourOn=!tourOn;if(tourOn)tourGo(
 document.getElementById('themeBtn').onclick=()=>{const r=document.documentElement,dk=r.dataset.theme?r.dataset.theme==='dark':matchMedia('(prefers-color-scheme: dark)').matches;r.dataset.theme=dk?'light':'dark';try{localStorage.setItem(KEY+'-tema',r.dataset.theme)}catch(e){}render()};
 const rb=document.getElementById('resetBtn');rb.onclick=()=>{if(!rb.dataset.arm){rb.dataset.arm=1;rb.textContent='Toque de novo para confirmar';setTimeout(()=>{delete rb.dataset.arm;rb.textContent='Restaurar dados de exemplo'},4000);return}
  resetting=true;try{localStorage.removeItem(KEY)}catch(e){}location.hash='inicio';location.reload()};
-document.addEventListener('keydown',e=>{if(!tourOn||/INPUT|TEXTAREA|SELECT/.test(document.activeElement?.tagName))return;if(e.key==='ArrowRight')tourGo(tourI+1);else if(e.key==='ArrowLeft')tourGo(tourI-1);else if(e.key==='Escape'){tourOn=false;render()}});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&modalEq){modalEq=null;render();return}if(!tourOn||/INPUT|TEXTAREA|SELECT/.test(document.activeElement?.tagName))return;if(e.key==='ArrowRight')tourGo(tourI+1);else if(e.key==='ArrowLeft')tourGo(tourI-1);else if(e.key==='Escape'){tourOn=false;render()}});
 const view=document.getElementById('view');
-view.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;const d=b.dataset;
- if(d.tact!=null){mapTact=d.tact||null;mapSel=null;render()}
+view.addEventListener('click',e=>{if(e.target.dataset?.close){modalEq=null;render();return}const b=e.target.closest('button');if(!b)return;const d=b.dataset;
+ if(d.eq){modalEq=+d.eq;modalR=route();render()}
+ else if(d.act==='modal-close'){modalEq=null;render()}
+ else if(d.mapgo){const x=S.eq.find(q=>q.id==d.mapgo);modalEq=null;mapTact=x.tact;mapSel=x.id;if(location.hash.slice(1)==='mapa')render();else location.hash='mapa'}
+ else if(d.eqg!=null){eqG=d.eqg;render()}
+ else if(d.qtype){if(!qa.from||qa.type!==d.qtype){qa.type=d.qtype;qa.items=TPL[d.qtype].map(t=>({t,r:null,acao:''}))}render()}
+ else if(d.qpdel!=null){qa.photos.splice(+d.qpdel,1);render()}
+ else if(d.act==='sig-clear'){qa.sig=null;render()}
+ else if(d.start){qa=newQa(undefined,+d.start);location.hash='auditoria-rapida'}
+ else if(d.audtab){audTab=d.audtab;render()}
+ else if(d.vist!=null){visT=d.vist;render()}
+ else if(d.vis){const v=S.visual.find(x=>x.id==d.vis);v.cond='boa';v.last=0;v.hist.push({d:0,what:'Troca registrada pelo monitor'});toast('Troca registrada');render()}
+ else if(d.calv){calV=d.calv;render()}
+ else if(d.cal!=null){const k=+d.cal;if(!k)calA.setTime(H.getTime());else if(calV==='mes'){calA.setDate(1);calA.setMonth(calA.getMonth()+k)}else calA.setDate(calA.getDate()+k*(calV==='semana'?7:1));render()}
+ else if(d.calday){calA.setTime(+d.calday);calV='dia';render()}
+ else if(d.catf!=null){catF=catF===d.catf?'':d.catf;render()}
+ else if(d.tact!=null){mapTact=d.tact||null;mapSel=null;render()}
  else if(d.sel){mapSel=+d.sel;render()}
  else if(d.eqst){const[id,s]=d.eqst.split(':');const x=S.eq.find(q=>q.id==id);x.st=s;mapSel=x.id;toast(`${x.code}: ${ST[s][0]} · prontidão ${preAudit().score}%`);render()}
  else if(d.qa){const[i,r]=d.qa.split(':');qa.items[i].r=r;render()}
  else if(d.act==='full'){const el=document.documentElement;(el.requestFullscreen?el.requestFullscreen():Promise.reject()).catch(()=>toast('Use F11 no teclado para tela cheia'))}
- else if(d.act==='qa-photo')toast('Na demonstração a foto não é salva');
- else if(d.act==='qa-save'){const nc=qa.items.filter(i=>i.r==='nao_conforme').length,at=qa.items.filter(i=>i.r==='atencao').length;const score=Math.round((qa.items.length-nc-at*.5)/qa.items.length*100);
-  S.audits.unshift({id:++uid,title:`Auditoria de ${qa.type} · ${qa.cell}`,type:qa.type,cell:qa.cell,auditor:qa.auditor,date:0,status:'concluida',result:nc?'nao_conforme':at?'atencao':'conforme',score});
-  qa.items.filter(i=>i.r==='nao_conforme').forEach(i=>S.ncs.unshift({id:++uid,desc:`${i.t} (${qa.cell})`,prio:'alta',team:'Equipe 1',resp:qa.auditor,prazo:3,status:'aberta'}));
-  qa=null;toast(`Auditoria salva · nota ${score}%${nc?` · ${nc} NC aberta(s)`:''}`);location.hash='centro-risco'}
+ else if(d.act==='qa-save'){const n=qa.items.length,nc=qa.items.filter(i=>i.r==='nao_conforme'),at=qa.items.filter(i=>i.r==='atencao').length;const score=Math.round((n-nc.length-at*.5)/n*100);
+  const rec={title:`Auditoria de ${qa.type} · ${qa.cell}`,type:qa.type,cell:qa.cell,auditor:qa.auditor,date:0,status:'concluida',result:nc.length?'nao_conforme':at?'atencao':'conforme',score,items:qa.items.map(({t,r,acao})=>({t,r,acao})),obs:qa.obs,photos:qa.photos,sig:qa.sig};
+  const old=qa.from&&S.audits.find(a=>a.id===qa.from);if(old)Object.assign(old,rec,{title:old.title});else S.audits.unshift({id:++uid,...rec});
+  const team={'Célula A':'Equipe 1','Célula B':'Equipe 2','Célula C':'Equipe 3','Célula D':'Equipe 5'}[qa.cell];
+  nc.forEach(i=>S.ncs.unshift({id:++uid,desc:`${i.t} (${qa.cell})`,prio:'alta',team,resp:qa.auditor,prazo:3,status:'aberta',acao:i.acao}));
+  qa=null;audTab='historico';toast(`Auditoria salva · nota ${score}%${nc.length?` · ${nc.length} NC aberta(s)`:''}`);location.hash='auditorias'}
  else if(d.act==='nc-new'){ncForm=!ncForm;render()}
  else if(d.nc){const n=S.ncs.find(x=>x.id==d.nc);n.status={aberta:'em_andamento',em_andamento:'concluida',concluida:'aberta'}[n.status];if(!n.resp&&n.status!=='aberta')n.resp='Filipi';toast('NC: '+NS[n.status][0]);render()}
- else if(d.recal){const x=S.eq.find(q=>q.id==d.recal);x.venc=365;x.cert=true;x.st=null;toast(`${x.code} calibrado · válido até ${dmy(365)}`);render()}
+ else if(d.recal){const x=S.eq.find(q=>q.id==d.recal);recal(x);toast(`${x.code} calibrado · certificado ${x.hist.at(-1).cert} · válido até ${dmy(365)}`);render()}
  else if(d.shift){shift=d.shift;render()}
  else if(d.act==='t-new'){tForm=!tForm;render()}
  else if(d.mv){const[id,s]=d.mv.split(':');S.tasks.find(t=>t.id==id).status=s;render()}
@@ -1920,13 +2098,17 @@ view.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)retur
  else if(d.q)perguntar(d.q);
 });
 view.addEventListener('change',e=>{const t=e.target;
- if(t.id==='qa-type')qa.type=t.value;else if(t.id==='qa-cell')qa.cell=t.value;else if(t.id==='qa-aud')qa.auditor=t.value;
- else if(t.id==='qa-tpl'){qa.tpl=+t.value;qa.items=S.templates[qa.tpl].items.map(x=>({t:x,r:null}));render()}});
+ if(t.id==='qa-cell')qa.cell=t.value;else if(t.id==='qa-aud')qa.auditor=t.value;
+ else if(t.id==='qa-photo'&&t.files[0])shrink(t.files[0],900,u=>{qa.photos.push(u);render()});
+ else if(t.id==='eqphoto'&&t.files[0]){const x=S.eq.find(q=>q.id===modalEq);shrink(t.files[0],480,u=>{x.photo=u;toast('Foto salva no cadastro');render()})}});
 view.addEventListener('input',e=>{const t=e.target;
- if(t.id==='qa-obs')qa.obs=t.value});
+ if(t.id==='qa-obs')qa.obs=t.value;
+ else if(t.dataset.acao!=null)qa.items[+t.dataset.acao].acao=t.value;
+ else if(t.id==='eqq'){const p=t.selectionStart;eqQ=t.value;render();const n=document.getElementById('eqq');n.focus();n.setSelectionRange(p,p)}});
 view.addEventListener('submit',e=>{e.preventDefault();const f=e.target;
- if(f.id==='ncf'){const d=document.getElementById('nc-d').value.trim();if(!d)return;S.ncs.unshift({id:++uid,desc:d,prio:document.getElementById('nc-p').value,team:document.getElementById('nc-t').value,resp:document.getElementById('nc-r').value.trim(),prazo:+document.getElementById('nc-z').value||0,status:'aberta'});ncForm=false;toast('NC registrada');render()}
+ if(f.id==='ncf'){const d=document.getElementById('nc-d').value.trim();if(!d)return;S.ncs.unshift({id:++uid,desc:d,prio:document.getElementById('nc-p').value,team:document.getElementById('nc-t').value,resp:document.getElementById('nc-r').value.trim(),prazo:+document.getElementById('nc-z').value||0,status:'aberta',acao:document.getElementById('nc-a').value.trim()});ncForm=false;toast('NC registrada');render()}
  if(f.id==='tf'){const n=document.getElementById('t-n').value.trim();if(!n)return;S.tasks.push({id:++uid,name:n,cat:document.getElementById('t-c').value,shift,status:'pendente',area:document.getElementById('t-a').value});tForm=false;toast('Tarefa criada');render()}
+ if(f.id==='qaadd'){const v=document.getElementById('qa-new').value.trim();if(v){qa.items.push({t:v,r:null,acao:''});render();document.getElementById('qa-new')?.focus()}}
  if(f.id==='askf'){const q=document.getElementById('askq').value.trim();if(q)perguntar(q)}});
 render();
 </script>
